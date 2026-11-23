@@ -1,0 +1,233 @@
+RELATORIO DE AUDITORIA TECNICA - PACOTE DE DESENVOLVIMENTO COM IA
+================================================================
+
+Data da auditoria: 2026-11-23
+Projeto auditado: C:\Work\dev\veyloq\gfm-template-ia-netcore-2026
+Pacote: Pacote desenvolvimento com IA: metodo, times e qualidade v1.0
+Origem: C:\Work\dev\veyloq\gfm-template-ia-netcore-2026\pacote-desenvolvimento-com-ia-v1.0-agents.zip
+Manifesto: id 2c0a8f1c-71e6-4e22-8ee6-c4f271e44a23, type bundle, slug pacote-desenvolvimento-com-ia, version 1.0, target agents, releasedAt 2026-11-05T23:32:06.066Z
+Modo: somente leitura. Nenhuma correcao, instalacao, servidor, container, git write ou alteracao de backup foi executado.
+Unico artefato criado por esta auditoria: reports\RELATORIO-AUDITORIA-PACOTE-IA-2026-11-23.txt
+
+PARECER FINAL
+=============
+NAO HOMOLOGADO para uso operacional irrestrito neste estado.
+
+O pacote e integramente instalado, licenciado e documentalmente coerente, mas depende de interpretacao de AGENTS.md e nao possui pontos de entrada nativos verificaveis para todas as ferramentas. Ha risco alto de truncamento no Codex CLI com a configuracao padrao, ausencia de CLI VEYLOQ no ambiente, path de skills nao nativo para Claude Code e uma referencia inexistente a context-manager em AGENTS.md. Recomenda-se homologacao apenas como biblioteca documental/governanca, apos as pendencias da secao 10.
+
+LEGENDAS DE CLASSIFICACAO
+=========================
+VALIDADO            evidencia local documental/integridade suficiente
+PARCIALMENTE VALIDADO compatibilidade documental detectada, sem prova operacional
+PENDENTE            nao verificavel no ambiente Auditado
+INCOMPATIVEL        conflito comprovado com caminho/configuracao padrao
+
+1. ESCOPO E METODO
+==================
+- Levantamento do estado do repositorio e do zip original.
+- Comparacao de tamanhos e SHA-256 dos 99 arquivos declarados no manifesto.
+- Leitura de AGENTS.md, README.md, leia.txt, ATTRIBUTION.md, kits e frontmatter das 14 skills.
+- Verificacao de referencias relativas nas skills: 19 links verificados, 0 quebrados.
+- Varredura estatica por padroes de segredos (AKIA, sk-, ghp_, atribuicoes de PASSWORD/SECRET/API_KEY/TOKEN): 0 ocorrencias.
+- Verificacao de presenca/versao de ferramentas no PATH.
+- Pesquisa em documentacao oficial de OpenCode, OpenAI Codex CLI, GitHub Copilot CLI e Claude Code.
+- Nao foram executados comandos de scaffold, migracao, audit, SAST, servidores ou testes do pacote.
+
+2. ESTADO DO REPOSITORIO
+========================
+- Sistema: Microsoft Windows NT 10.0.26300.0, PowerShell 5.1.26100.10068.
+- Git: branch main, rastreando main...origin/main.
+- Remote origin: https://github.com/gfmaurilajob/gfm-template-ia-netcore-2026.git
+- Log recente: 1c09ead inicio; 2e16285 inicio; aada21b bkp.
+- Antes da auditoria: 7 entradas nao rastreadas -> .agents/, AGENTS.md, ATTRIBUTION.md, agents/, bundles/, commands/, kits/.
+- Depois da auditoria: mesma lista, acrescida apenas de reports/ com este relatorio.
+- Nenhum arquivo rastreado foi modificado.
+
+3. INVENTARIO E INTEGRIDADE
+===========================
+- ZIP agents files: 99
+- INSTALLED files: 99
+- MISSING: 0
+- EXTRA: 0
+- HASH_OK: 99
+- HASH_BAD: 0
+- AGENTS.md instalado e identico ao AGENTS.md do zip: True, 232894 bytes.
+- Detalhe por arquivo: C:\Users\gfmau\AppData\Local\Temp\opencode\audit-inventory.txt
+- Itens declarados: 47 (bundle 1, kit 6, skill 14, agent 18, command 8).
+
+Resultado: VALIDADO. A instalacao anterior foi fiel ao conteudo do zip, sem perdas ou arquivos estranhos.
+
+4. ESTRUTURA INSTALADA
+======================
+- AGENTS.md: governanca canonica e corpo operacional de agentes/comandos.
+- ATTRIBUTION.md: creditos e licencas.
+- .agents/skills/: 14 skills com SKILL.md, referencias, scripts e licencas.
+- agents/: 18 diretorios contendo LICENSE.txt; as definicoes dos agentes estao em AGENTS.md.
+- commands/: 8 diretorios contendo LICENSE.txt; as definicoes dos comandos estao em AGENTS.md.
+- bundles/: metadado do bundle.
+- kits/: 6 guias Markdown de agrupamento.
+
+5. COMPONENTES
+==============
+
+5.1 Agentes (18) - responsabilidades extraidas de AGENTS.md
+-----------------------------------------------------------
+- agente-desenvolvedor-front-end: telas completas em React/Vue/Angular, componentes, layout responsivo, a11y e integracao com APIs.
+- agente-especialista-react: React 18+, estado, performance, hooks, SSR/concurrent features, testes e bundle.
+- agente-desenvolvedor-nextjs: Next.js 14+ App Router, Server Components/Actions, cache, SEO, Web Vitals e deploy.
+- agente-typescript-avancado: TypeScript 5+, strict mode, generics, unioes discriminadas, seguranca full-stack e build.
+- agente-designer-de-interface: design system, tokens, estados, responsividade, dark mode e handoff.
+- agente-testador-de-acessibilidade: WCAG 2.1/3.0, teclado, screen readers, contraste, ARIA e testes manuais/automaticos.
+- agente-desenvolvedor-backend: API REST, persistencia, autenticacao, cache, observabilidade, Docker e testes.
+- agente-designer-de-api: contratos REST/GraphQL, OpenAPI 3.1, paginacao, erros, versionamento e DX.
+- agente-especialista-nodejs: runtime Node, event loop, streams, I/O, seguranca, logging e graceful shutdown.
+- agente-python-profissional: Python 3.11+, tipagem, async, pytest, ruff/mypy e padroes FastAPI/SQLAlchemy.
+- agente-especialista-sql: consultas, CTE/window functions, indices, transacoes e tuning.
+- agente-especialista-postgresql: tuning, EXPLAIN, indices, replicacao, backup/PITR, vacuum e extensoes.
+- agente-especialista-docker: multi-stage, reducao de imagem, hardening, Compose, SBOM e CI.
+- agente-especialista-qa: estrategia de testes, cobertura, metricas, gates, defect management e release.
+- agente-automacao-de-testes: frameworks, POM, API/mobile/performance, CI/CD, dados de teste e relatorios.
+- agente-depurador: reproducao, hipoteses, stack traces, root cause, validacao e postmortem.
+- agente-auditor-de-seguranca: SAST/compliance, controles, riscos, evidencias e plano de remediação.
+- agente-engenheiro-de-desempenho: baseline, profiling, load tests, gargalos, escalabilidade e monitoramento.
+
+5.2 Comandos (8) - definicoes em AGENTS.md
+-------------------------------------------
+- /typescript-scaffold (linha 1454): gerar projeto Next.js, Vite, Node ou biblioteca TypeScript.
+- /component-scaffold (linha 1821): gerar componente React com tipos, teste, estilo e Storybook.
+- /python-scaffold (linha 3977): gerar projeto FastAPI, Django, biblioteca ou CLI Python.
+- /sql-migrations (linha 4315): planejar migracoes de banco com zero downtime, validacao e rollback.
+- /test-generate (linha 6266): gerar testes unitarios, mocks e casos de borda.
+- /security-sast (linha 6587): analise estatica de seguranca multilingua.
+- /deps-audit (linha 7095): auditoria de dependencias, vulnerabilidades, licencas e supply chain.
+- /pr-enhance (linha 7900): melhorar descricao, checklist, riscos e revisao de PR.
+
+5.3 Skills (14) - .agents/skills/<slug>/SKILL.md
+-------------------------------------------------
+- brainstorming: obter requisitos/intencao antes de qualquer trabalho criativo.
+- writing-plans: transformar spec em plano de tarefas pequenas, com testes e criterio de pronto.
+- test-driven-development: teste primeiro, falha observada, codigo minimo, refatoracao.
+- systematic-debugging: causa raiz antes de correcao; evidencia antes de hipotese final.
+- using-git-worktrees: isolamento de trabalho via worktree nativo ou fallback git.
+- subagent-driven-development: subagente fresco por tarefa, revisao por tarefa e revisao final.
+- executing-plans: execucao inline do plano quando nao ha subagentes.
+- requesting-code-review: revisor separado com contexto recortado, antes de merge.
+- receiving-code-review: avaliacao tecnica do feedback antes de aplicar.
+- verification-before-completion: executar comandos de verificacao antes de afirmar conclusao.
+- finishing-a-development-branch: teste verde, deteccao de ambiente e escolha merge/PR/guardar.
+- context-fundamentals: fundamentos de engenharia de contexto e atencao.
+- context-degradation: diagnosticar lost-in-middle, poisoning, clash, confusion e distractors.
+- context-optimization: orcamento, compactacao, mascara, cache e particionamento de contexto.
+
+5.4 Kits (6)
+-------------
+- superpowers-metodo-completo: brainstorming, plano, TDD e depuracao sistematica.
+- superpowers-fluxo-de-entrega: worktrees, subagentes, execucao, revisao, verificacao e finalizacao.
+- kit-time-de-front-end: 6 agentes + 2 comandos para projeto/interface/tela/acessibilidade.
+- kit-time-de-back-end: 7 agentes + 2 comandos para API, linguagem, banco, migracao e Docker.
+- kit-qualidade-e-seguranca: 5 agentes + 4 comandos para testes, CI, SAST, dependencias, auditoria e performance.
+- kit-engenharia-de-contexto-para-agentes: fundamentos, degradacao e otimizacao de contexto.
+
+6. CONVENCIAS DO PROJETO E COMPATIBILIDADE INTERNA
+==================================================
+- README.md:58 define AGENTS.md como regra compartilhada; arquivos especificos de ferramenta sao pontos de entrada, nao fontes concorrentes.
+- README.md:69-71 exige autorizacao explicita antes de executar tarefas que alterem codigo/recursos. Isso se aplica tambem aos comandos do pacote.
+- README.md:120-166 descreve CLAUDE.md, .github/copilot-instructions.md, .codex/, .claude/, .opencode/, governance/, templates/, src/ e tests/ como estrutura documental/reservada. Esses caminhos nao existem localmente; trata-se de gap pre-existente do template, nao de falha da instalacao do pacote.
+- README.md:182 reforca que o repositorio e documental, sem aplicacao, testes executaveis, infraestrutura ou CI/CD implementados.
+- AGENTS.md tem 8621 linhas e 146 titulos H2. Duplicacoes por secao: Response language 26, Communication Protocol 18, Development Workflow 15, Output Format 7, Instructions 7, Requirements 7, Context 7, Execution Flow 2.
+- Referencia invalida: context-manager aparece em AGENTS.md nas linhas 9, 28, 70, 1005, 1024 e 1066, mas nenhum agente com esse nome existe no manifesto.
+
+7. MATRIZ DE COMPATIBILIDADE DAS FERRAMENTAS
+============================================
+
+7.1 VEYLOQ
+----------
+-Estado local: INCOMPATIVEL/PENDENTE no estado atual.
+- leia.txt:3 aponta https://app.veyloq.org/bundles/pacote-desenvolvimento-com-ia.
+- leia.txt:9 informa o comando veyloq pacote-desenvolvimento.
+- where.exe veyloq: sem resultados; npm list -g veyloq --depth=0: "(empty)".
+- O zip local, porem, e valido e contem manifesto/licencas completos.
+- Nao foi executado nenhum comando da CLI, pois a instalacao e vedada por restricao.
+
+7.2 OpenAI Codex CLI
+--------------------
+-Estado: PARCIALMENTE VALIDADO; INCOMPATIVEL com a configuracao padrao.
+- Versao local: codex-cli 0.171.0.
+- Documentacao oficial: https://learn.chatgpt.com/docs/agent-configuration/agents-md
+- Evidencia: o Codex le AGENTS.md como instrucoes de projeto.
+- Risco: o limite padrao de project_doc_max_bytes e 32 KiB; AGENTS.md tem 232894 bytes. Sem configuracao explicita, o arquivo nao sera carregado por completo.
+
+7.3 OpenCode
+------------
+-Estado: PARCIALMENTE VALIDADO.
+- Versao local: opencode 1.19.0.
+- Documentacao oficial: https://opencode.ai/docs/skills/
+- Evidencia: a documentacao indica discoveries de skills em .agents/skills como compatibilidade de projeto; o pacote instalou exatamente esse caminho.
+- Ressalva: nao ha diretorio .opencode/ com ponto de entrada explicito, e a invocacao das 14 skills nao foi testada nesta auditoria.
+
+7.4 GitHub Copilot CLI
+----------------------
+-Estado: PARCIALMENTE VALIDADO.
+- Versao local: GitHub Copilot CLI 1.0.109.
+- Documentacao oficial: https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-custom-instructions
+- Evidencia: a documentacao informa suporte a AGENTS.md em locais padrao e a .github/copilot-instructions.md.
+- Ressalva: nao existe .github/copilot-instructions.md no repositorio; a descoberta depende do suporte a AGENTS.md pela versao instalada.
+
+7.5 Claude Code
+---------------
+-Estado: PARCIALMENTE VALIDADO para instrucoes; PENDENTE/INCOMPATIVEL para skills nativas no caminho atual.
+- CLI nao encontrada localmente (claude NAO FOUND).
+- Documentacao oficial: https://code.claude.com/docs/en/memory , https://code.claude.com/docs/en/claude-directory , https://code.claude.com/docs/en/skills/
+- Evidencia: Claude Code consegue ler AGENTS.md no lugar de CLAUDE.md; arquivos ate 4 MiB sao carregados integralmente, e AGENTS.md tem 232894 bytes.
+- Ressalva: a documentacao recomenda arquivos curtos (alvo < 200 linhas) e skills de projeto em .claude/skills/<nome>/SKILL.md. O pacote instalou skills em .agents/skills/ e nao criou .claude/. Nao ha evidencia de que o Claude Code descubra esse caminho como skill nativa.
+
+8. SEGURANCA ESTATICA (SEM EXECUCAO)
+====================================
+- Nenhum padrao de chave/token (AKIA..., sk-..., ghp_...) foi encontrado.
+- Nenhuma atribuicao literal de PASSWORD/SECRET/API_KEY/TOKEN com valor aparente foi encontrada.
+- .agents/skills/brainstorming/scripts/server.cjs: HOST padrao 127.0.0.1 (linha 100), token de acesso com gate 403 (linha 389) e abertura de navegador condicionada a BRAINSTORM_OPEN (linha 533). Se BRAINSTORM_OPEN_CMD for definido, ha cp.exec com entrada de operador confiavel (linha 540); manter essa variavel sob controle.
+- helper.js usa innerHTML apenas com string estatica (linha 70), sem interpolacao de entrada externa.
+- compaction.py menciona/usa tiktoken apenas dentro de docstring de exemplo (linhas 77-79); nao ha import runtime externo real.
+- Scripts .sh e sem extensao possuem atributo unix 0x0000 e nao sao executaveis; a documentacao os chama via bash/node.
+- Nenhum hook foi instalado e .claude/settings.json nao foi alterado.
+- Resultado: PARCIALMENTE VALIDADO. Sem achados criticos, mas os scripts opcionais nao foram executados.
+
+9. CONFLITOS E RISCOS
+=====================
+RISCO ALTO
+- Codex CLI com configuracao padrao nao carrega AGENTS.md completo devido ao limite de 32 KiB. Isso pode causar comportamento parcial e imprevisivel.
+- Comandos como /sql-migrations, /typescript-scaffold, /python-scaffold, /security-sast e /deps-audit contem receitas com efeito colateral. O README exige aprovacao explicita; o pacote nao possui um gate tecnico proprio.
+- CLI VEYLOQ ausente impede reproduzir a instalacao pelo comando documentado.
+
+RISCO MEDIO
+- Ausencia de pontos de entrada nativos para agentes/comandos/skills em .codex/, .claude/, .opencode/ ou .github/. O pacote depende de AGENTS.md ser interpretado como fonte canonica.
+- context-manager referenciado, mas inexistente no manifesto. Agentes podem aguardar um interlocutor que nao existe.
+- AGENTS.md muito longo e repetitivo; duplicacoes podem aumentar custo de contexto e reduzir aderencia das instrucoes.
+- Skills Superpowers foram instaladas juntas, mas o kit de entrega alerta que executar-plano e subagent-driven-development compartilham scripts; qualquer exclusao parcial quebraria o fluxo.
+
+RISCO BAIXO
+- Licencas MIT e ATTRIBUTION.md presentes; creditos rastreaveis.
+- Links Markdown relativos nas skills: 19/19 validos.
+- Nenhum segredo evidente encontrado na varredura estatica.
+
+10. PENDENCIAS PARA HOMOLOGACAO
+===============================
+1. Declarar explicitamente quais paths de entrada cada ferramenta usara, ou confirmar em teste real que AGENTS.md/.agents/skills sao descobertos.
+2. Reduzir, dividir ou configurar o tamanho de AGENTS.md para Codex (project_doc_max_bytes > 232894 bytes, ou arquivo menor) antes de usar o Codex como executor.
+3. Resolver a referencia a context-manager: remova-a ou inclua um agente/fluxo com esse nome.
+4. Criar um gate de aprovacao humano antes de qualquer comando do pacote com efeito colateral, em especial migracoes, scaffold e instalacao de dependencias.
+5. Validar a CLI VEYLOQ ou documentar a instalacao manual via zip como unica via suportada neste ambiente.
+6. Executar, em sandbox e com aprovacao, um smoke test de pelo menos um comando, uma skill e um agente por ferramenta alvo, registrando evidencias.
+7. Antes de habilitar o companion de brainstorming, revisar variaveis BRAINSTORM_OPEN/BRAINSTORM_OPEN_CMD e confirmar escopo de rede local.
+
+11. LIMITACOES DESTA AUDITORIA
+==============================
+- Auditoria somente leitura; nao houve execucao operacional dos comandos, skills ou agentes.
+- Classificacoes documentais nao substituem teste funcional das ferramentas instaladas.
+- O inventario detalhado foi gravado em C:\Users\gfmau\AppData\Local\Temp\opencode\audit-inventory.txt e nao faz parte do pacote instalado.
+- A URL da VEYLOQ foi obtida de leia.txt; nao foi acessada nesta auditoria.
+- Primeira tentativa de busca Claude Code falhou com "StatusCode: non 2xx status code (429 POST https://mcp.exa.ai/mcp)"; a documentacao foi obtida na tentativa seguinte.
+
+12. CONCLUSAO
+=============
+O pacote foi instalado de forma integre e possui conteudo rico e licenciado, adequado como biblioteca de governanca, papéis e procedimentos. Contudo, no estado atual ele nao deve ser homologado para execucao automatica: ha dependencia de interpretacao de um AGENTS.md muito grande, incompatibilidade com o limite padrao do Codex, ausencia de entry points nativos e uma referencia quebrada a context-manager. A homologacao fica condicionada as pendencias da secao 10 e a evidencias de execucao real.
