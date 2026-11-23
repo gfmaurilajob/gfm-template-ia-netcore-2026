@@ -1,0 +1,22 @@
+
+
+https://app.veyloq.org/bundles/pacote-desenvolvimento-com-ia
+
+
+
+
+comando
+veyloq pacote-desenvolvimento
+
+ou 
+
+Instale o item "Pacote desenvolvimento com IA: método, times e qualidade" da VEYLOQ que está no zip anexado. 
+Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). 
+Se o zip tiver um AGENTS.md e o projeto também, junte os dois. 
+Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. 
+Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. 
+No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
