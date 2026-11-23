@@ -1,0 +1,84 @@
+RELATÓRIO DE HOMOLOGAÇÃO — CONFIGURAÇÃO DAS TRÊS IAS
+Data: 23/11/2026
+Repositório: C:\Work\dev\veyloq\gfm-template-ia-netcore-2026
+Escopo: OpenAI Codex CLI, OpenCode e Anthropic Claude Code.
+
+1. OBJETIVO
+Configurar o repositório para uso independente ou combinado das três IAs, com governança compartilhada, catálogo comum de agentes/comandos/skills/kits, preservação integral do AGENTS.md original e classificação de homologação baseada em evidência.
+
+2. ESTADO PRÉVIO E PRESERVAÇÃO
+- Git: branch `main`, remote `origin https://github.com/gfmaurilajob/gfm-template-ia-netcore-2026.git`.
+- Antes da execução, `leia.txt` e `pacote-desenvolvimento-com-ia-v1.0-agents.zip` apareciam movidos da raiz para `docs/` (`D` na raiz, `??` em `docs/`). Essa movimentação já existia no estado atual e não foi realizada nesta tarefa.
+- Não houve `git push`, `reset --hard`, mudança de remote/branch, instalação de dependências, migrations, scaffolds, containers, publicação ou execução de modelos.
+- Backup/inventário fora do Git: `C:\Users\gfmau\AppData\Local\Temp\opencode\homologacao-2026-11-23\backup\`.
+- Inventário dos 99 arquivos: `C:\Users\gfmau\AppData\Local\Temp\opencode\homologacao-2026-11-23\inventario-99-arquivos.txt`.
+- Integridade prévia recalculada: `VERIFICADOS=99`, `OK=99`, `DIVERGENTES=0`.
+- Manifesto do zip: id `2c0a8f1c-71e6-4e22-8ee6-c4f271e44a23`, slug `pacote-desenvolvimento-com-ia`, version `1.0`, target `agents`, `files=99`.
+
+3. VERSÕES OBSERVADAS
+- codex-cli 0.171.0
+- opencode 1.19.0
+- claude = NAO FOUND
+- GitHub Copilot CLI 1.0.109.
+- node v24.20.0
+- Python 3.13.15
+- dotnet 10.0.402
+
+4. ALTERAÇÕES REALIZADAS
+- `AGENTS.md`: substituído por entrypoint objetivo; de 8.621 linhas / 232.894 bytes para 59 linhas / 4.567 bytes.
+- Conteúdo original preservado integralmente em `docs/ai/reference/AGENTS-original.md`.
+- Hash SHA-256 do original: `f2d1a15cb5c0d44facd967f50d01d1d76b15bf86bc236b6b94dfeee9edc0f741`; registrado em `docs/ai/reference/AGENTS-original.sha256.txt`.
+- Índice das 146 seções H2: `docs/ai/reference/AGENTS-index.md`.
+- Definições longas: 19 arquivos em `docs/ai/reference/agents/` e 8 em `docs/ai/reference/commands/`.
+- Catálogo compartilhado: `docs/ai/CATALOGO.md`.
+- Agente `context-manager` adicionado para satisfazer as referências históricas sem apagar o original.
+- Codex: `.codex/config.toml`, 19 agentes em `.codex/agents/`, 8 skills de comando em `.codex/skills/`.
+- OpenCode: `opencode.json` com permissões V1, 19 agentes em `.opencode/agents/`, 8 comandos em `.opencode/commands/`.
+- Claude Code: `CLAUDE.md` com `@AGENTS.md`, `.claude/settings.json` sem hooks, 19 agentes em `.claude/agents/`, 8 comandos em `.claude/commands/`, 14 adaptadores de skills em `.claude/skills/`.
+- `README.md`: acrescentadas seções sobre entrypoint, preservação, catálogo, pontos de entrada e disponibilidade do Claude Code; nenhuma seção existente foi removida.
+- Skills canônicas permaneceram em `.agents/skills/`; kits permaneceram em `kits/`.
+
+5. TESTES CONTROLADOS EXECUTADOS
+- `git status --short --branch`: estado verificado; alterações desta tarefa listadas, sem push.
+- `python hashlib`: integridade dos 99 arquivos e hash do original confirmados.
+- `python json/tomllib`: `opencode.json`, `.claude/settings.json`, `.codex/config.toml` e 19 TOMLs de agentes válidos.
+- Frontmatter Markdown: 0 arquivos inválidos nos adaptadores de Codex/OpenCode/Claude.
+- Varredura de segredos nos adaptadores: 0 possíveis segredos.
+- `codex --strict-config --version`: `codex-cli 0.171.0`, nenhum erro de config.
+- `codex doctor --summary --no-color --ascii`: `19 ok | 3 notes | 3 warn | 0 fail degraded`; config carregada, auth configurada, sandbox restrito com aprovação OnRequest.
+- `codex debug prompt-input "verificar descoberta de governanca"`: o prompt incluiu `# AGENTS.md instructions for C:\Work\dev\veyloq\gfm-template-ia-netcore-2026`, confirmando descoberta do entrypoint.
+- `opencode debug config`: primeira execução falhou com `V2 permissions are not supported by OpenCode V1. Use V1 "permission" rules or run opencode2. permissions`. Config convertida para V1; reexecução válida, com `permission`, 19 agentes e 8 comandos resolvidos.
+- `opencode agent list`: agentes customizados descobertos, incluindo `context-manager`.
+- `opencode debug skill`: skills descobertas em `.agents/skills/` e nos adaptadores `.claude/skills/`.
+- `claude --version`: falhou com `O termo 'claude' não é reconhecido como nome de cmdlet, função, arquivo de script ou programa operável.`
+
+6. CLASSIFICAÇÃO POR FERRAMENTA
+
+6.1 OpenAI Codex CLI — HOMOLOGADO COM RESSALVAS
+Evidências: versão 0.171.0; config strict válida; doctor sem falhas; descoberta do `AGENTS.md` confirmada no prompt; TOMLs válidos.
+Ressalvas: não houve execução de modelo, subagente ou skill em sessão controlada; `doctor` emitiu notas ambientais sobre Microsoft Defender, Dev Drive e app-server stale; `project_doc_max_bytes = 65536` foi aceito, mas o entrypoint atual já tem 4.567 bytes.
+
+6.2 OpenCode — HOMOLOGADO COM RESSALVAS
+Evidências: versão 1.19.0; config V1 válida após correção; 19 agentes e 8 comandos resolvidos; 14 skills canônicas e 14 adaptadores descobertos.
+Ressalvas: a documentação online atual descreve permissões V2, incompatíveis com a versão instalada; adapters `.claude/skills/` aparecem duplicados na descoberta do OpenCode, mas `.agents/skills/` é a fonte canônica; não houve execução de modelo.
+
+6.3 Anthropic Claude Code — PENDENTE
+Evidências: arquivos `CLAUDE.md`, `.claude/settings.json`, agentes, comandos e adaptadores de skills criados e validados estruturalmente.
+Ressalvas: CLI ausente; nenhuma descoberta ou execução operacional pôde ser verificada. Não foi instalada automaticamente.
+
+6.4 Uso combinado das três IAs — PENDENTE
+A camada configuracional de Codex + OpenCode está `HOMOLOGADO COM RESSALVAS`. O uso realmente combinado das três ferramentas permanece `PENDENTE` enquanto o Claude Code não estiver disponível para teste.
+
+7. COMO CHAMAR OS ITENS
+- Codex CLI: mencione `@<agente>` para agentes; skills de comando podem ser listadas com `/skills` e invocadas pelo nome conforme a CLI 0.171.0; em dúvida, peça ao `@context-manager`.
+- OpenCode: use `@<agente>` ou modo subagente; comandos por `/<comando>`, por exemplo `/typescript-scaffold`; skills são descobertas automaticamente.
+- Claude Code: use a ferramenta `Task` para agentes, `/<comando>` para comandos e `/<skill>` ou menção por nome para skills. Classificação operacional permanece `PENDENTE`.
+
+8. RISCOS E RESTRIÇÕES PERMANENTES
+- Nenhum hook foi instalado; se necessário, o comando exato deve ser mostrado e autorizado antes de alterar `.claude/settings.json`.
+- Não modificar `docs/ai/reference/`, o backup de 23/11/2026, remote Git, branch principal, histórico ou autenticação.
+- Não executar operações destrutivas, publicação, instalação automática, migrations, scaffolds, serviços, containers ou scripts com efeito colateral sem autorização explícita.
+- Resposta sempre em português (pt-BR).
+
+9. PARECER FINAL
+A base documental e os adaptadores das três ferramentas foram configurados sem perda do conteúdo original. Codex CLI e OpenCode estão `HOMOLOGADO COM RESSALVAS`; Claude Code e o uso combinado completo estão `PENDENTE`. Não há parecer `HOMOLOGADO` sem ressalvas porque não foi realizada execução controlada de modelo/subagente/skill e a terceira CLI não estava disponível.

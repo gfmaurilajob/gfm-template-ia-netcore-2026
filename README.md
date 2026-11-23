@@ -37,9 +37,9 @@ As tecnologias citadas são opções documentais, não dependências instaladas 
 
 ## 5. Módulos Back-end
 
-`src/back-end/` documenta os limites para APIs, Workers, Batch e outros hosts selecionados. Para o cenário .NET, os documentos de arquitetura consideram API, Application, Domain, Core e Infrastructure, com CrossCutting, Worker e Batch opcionais. Não se impõe essa estrutura física a Java, Python, PHP ou outros ecossistemas.
+O repositório não contém `src/`, `blueprints/` nem `templates/`. Os documentos de arquitetura disponíveis em `docs/architecture/` descrevem limites lógicos para APIs, Workers, Batch e outros hosts selecionados. Para o cenário .NET, consideram API, Application, Domain, Core e Infrastructure, com CrossCutting, Worker e Batch opcionais. Não se impõe essa estrutura física a Java, Python, PHP ou outros ecossistemas.
 
-Persistência, mensageria, autenticação e processos hospedados só devem ser incluídos quando necessários. Consulte os [blueprints](blueprints/README.md) e os [modelos Bootstrap Back-end](templates/tasks/bootstrap/back-end/README.md).
+Persistência, mensageria, autenticação e processos hospedados só devem ser incluídos quando necessários em projetos futuros. Consulte `docs/architecture/README.md` e o [diagrama de Back-end](docs/architecture/diagrams/gfm-template-backend.png).
 
 ![Diagrama lógico de Back-end .NET com direção de dependências entre hosts, Application, Domain, Core e Infrastructure; componentes opcionais são identificados.](docs/architecture/diagrams/gfm-template-backend.png)
 
@@ -57,6 +57,10 @@ O cenário Mobile usa React Native + Expo conforme definido nos documentos de Fr
 
 As ferramentas de agente devem seguir as regras compartilhadas em `AGENTS.md`; arquivos específicos de ferramenta servem como pontos de entrada, não como fontes concorrentes de governança. Solicitações, decisões e execução permanecem sujeitas aos mesmos requisitos de escopo e aprovação.
 
+O `AGENTS.md` ativo é um entrypoint objetivo. O conteúdo original do pacote de IA foi preservado integralmente em `docs/ai/reference/AGENTS-original.md`, com hash em `docs/ai/reference/AGENTS-original.sha256.txt` e índice de seções em `docs/ai/reference/AGENTS-index.md`. Definições longas de agentes e comandos ficam em `docs/ai/reference/agents/` e `docs/ai/reference/commands/`.
+
+O catálogo compartilhado em `docs/ai/CATALOGO.md` mapeia os 18 agentes originais, o agente `context-manager`, os 8 comandos, as 14 skills canônicas em `.agents/skills/` e os 6 kits em `kits/`. Codex CLI usa `.codex/`, OpenCode usa `opencode.json` e `.opencode/`, e Claude Code usa `CLAUDE.md` e `.claude/`. A descoberta de skills foi confirmada no Codex CLI 0.171.0 (8 comandos em `.codex/skills/` e 14 skills em `.agents/skills/`) e no OpenCode 1.19.0 com `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1` (14 skills canônicas, sem adaptadores duplicados). Nenhum hook foi instalado. A configuração do Claude Code está preparada, mas a ferramenta não estava disponível no ambiente de auditoria; sua homologação operacional permanece `PENDENTE`.
+
 ![Diagrama de agentes: GitHub Copilot, OpenAI Codex, Claude Code e OpenCode seguem AGENTS.md; o fluxo inclui aprovação explícita antes de execução futura.](docs/architecture/diagrams/gfm-template-ai-agents.png)
 
 ## 9. Fluxo SPEC → ARQUITETURA → PLAN → TASKS
@@ -68,15 +72,15 @@ As ferramentas de agente devem seguir as regras compartilhadas em `AGENTS.md`; a
 5. Decompor o plano em TASKs verificáveis e rastreáveis.
 6. Obter autorização explícita antes de executar tarefas que alterem código ou recursos.
 
-A aprovação de um documento não autoriza automaticamente implementação, acesso externo, operações destrutivas ou implantação. O fluxo completo está em [`docs/tasks/agent-workflow.md`](docs/tasks/agent-workflow.md).
+A aprovação de um documento não autoriza automaticamente implementação, acesso externo, operações destrutivas ou implantação. A governança operacional deste pacote está em `AGENTS.md` e o inventário em `docs/ai/CATALOGO.md`.
 
 ## 10. FASE 00 — Bootstrap
 
-A FASE 00 organiza a fundação técnica antes das funcionalidades. Os modelos incluem seleção de stack, estrutura, arquitetura, configurações, testes, segurança, observabilidade, CI/CD, diagramas e validação. Bootstrap Back-end e Front-end são independentes; só são coordenados quando uma SPEC seleciona um projeto Full Stack. Persistência, Docker, mensageria e publicação são condicionais.
+A FASE 00 é descrita apenas como modelo documental. Os diagramas em `docs/architecture/diagrams/` representam seleção de stack, estrutura, arquitetura, configurações, testes, segurança, observabilidade, CI/CD e validação. Bootstrap Back-end e Front-end são independentes; só são coordenados quando uma especificação futura seleciona um projeto Full Stack. Persistência, Docker, mensageria e publicação são condicionais.
 
 ![Diagrama da FASE 00: trilhas independentes de Bootstrap Back-end e Front-end, com integração Full Stack opcional e validação final.](docs/architecture/diagrams/gfm-template-bootstrap.png)
 
-Consulte a [SPEC-000](templates/specifications/SPEC-000-fundacao-tecnica.md), o [PLAN-000](templates/implementation-plans/PLAN-000-bootstrap.md), o [Bootstrap Back-end](templates/tasks/bootstrap/back-end/README.md) e o [Bootstrap Front-end](templates/tasks/bootstrap/front-end/README.md). São modelos reutilizáveis, não tarefas de um projeto real.
+O material correspondente neste repositório está em `docs/architecture/` e nos kits de `kits/`. Não há modelos de SPEC, PLAN ou TASK instalados neste pacote.
 
 ## 11. Testes e qualidade
 
@@ -84,11 +88,11 @@ Cada projeto futuro define testes e Quality Gates aplicáveis à sua stack e ris
 
 ![Fluxo de Quality Gates: implementação passa por testes, verificações arquiteturais e segurança; falhas bloqueiam conclusão, e evidências são exigidas.](docs/architecture/diagrams/gfm-template-quality-gates.png)
 
-As políticas estão em `governance/quality-gates/` e `docs/testing/`.
+A referência de qualidade disponível está em `kits/kit-qualidade-e-seguranca/` e `docs/architecture/diagrams/gfm-template-quality-gates.png`.
 
 ## 12. Docker e GitHub Actions
 
-`devops/` e `docs/devops/` descrevem o planejamento futuro de ambientes, Docker e GitHub Actions. **Este template não contém Dockerfiles, arquivos Compose executáveis, fluxos de trabalho YAML nem pipelines implementados.** Projetos futuros devem definir seus Quality Gates, artefatos, aprovações, reversão (rollback) e ambientes protegidos antes de automatizar esses processos.
+Não há pastas `devops/` ou `docs/devops/` neste repositório. **Este pacote não contém Dockerfiles, arquivos Compose executáveis, fluxos de trabalho YAML nem pipelines implementados.** Projetos futuros devem definir seus Quality Gates, artefatos, aprovações, reversão (rollback) e ambientes protegidos antes de automatizar esses processos. O diagrama abaixo representa apenas o planejamento documental.
 
 ![Diagrama de versionamento e CI/CD planejados: política de branches e merge definida por projeto, CI e publicação futura sujeitas a revisão e aprovação.](docs/architecture/diagrams/gfm-template-gitflow.png)
 
@@ -96,7 +100,7 @@ O diagrama não estabelece nomes de branches nem regras oficiais de merge; essas
 
 ## 13. Segurança e governança
 
-As regras canônicas e políticas encontram-se em `AGENTS.md`, `governance/` e `docs/security/`. Os princípios incluem menor privilégio, proteção de segredos, registro de logs sem dados sensíveis, revisão de segurança e autorização limitada ao escopo aprovado. Não armazenar segredos no repositório.
+As regras canônicas encontram-se em `AGENTS.md`; a governança de IA está inventariada em `docs/ai/CATALOGO.md` e o material de segurança em `kits/kit-qualidade-e-seguranca/`. Os princípios incluem menor privilégio, proteção de segredos, registro de logs sem dados sensíveis, revisão de segurança e autorização limitada ao escopo aprovado. Não armazenar segredos no repositório.
 
 ## 14. Diagramas de arquitetura
 
@@ -123,53 +127,30 @@ Mapa resumido da estrutura existente — diretórios de implementação são doc
 GFM.Template/
 ├── AGENTS.md
 ├── CLAUDE.md
-├── .github/copilot-instructions.md
-├── .codex/                 # ponto de entrada e orientações do agente
-├── .claude/                # ponto de entrada e orientações do agente
-├── .opencode/              # ponto de entrada e orientações do agente
-├── blueprints/             # cenários Back-end, Front-end e Full Stack
-├── devops/                 # planejamento de Docker, ambientes e CI/CD
+├── README.md
+├── opencode.json
+├── ATTRIBUTION.md
+├── .agents/                 # 14 skills canônicas
+├── .claude/                 # adaptadores Claude Code
+├── .codex/                  # adaptadores Codex CLI
+├── .opencode/               # adaptadores OpenCode
+├── agents/                  # licenças dos 18 agentes originais
+├── bundles/
+├── commands/                # licenças dos 8 comandos originais
 ├── docs/
-│   ├── architecture/       # decisões, diagramas e padrões
-│   ├── devops/
-│   ├── implementation-plans/
-│   ├── integration/
-│   ├── operations/
-│   ├── security/
-│   ├── specs/
-│   ├── tasks/
-│   ├── technical-debt/
-│   └── testing/
-├── governance/             # agentes, arquitetura, qualidade e segurança
-├── src/                    # limites documentais dos módulos futuros
-│   ├── back-end/
-│   └── front-end/
-│       ├── mobile/         # React Native + Expo
-│       ├── shared/
-│       └── web/
-│           ├── admin/      # React
-│           ├── site/       # React
-│           └── landing-page/ # Next.js
-├── templates/              # modelos de SPEC, PLAN, TASK e revisão
-│   ├── README.md
-│   ├── architecture-decisions/
-│   ├── implementation-plans/
-│   ├── security-reviews/
-│   ├── specifications/
-│   ├── tasks/
-│   │   ├── bootstrap/
-│   │   │   ├── back-end/
-│   │   │   └── front-end/
-│   │   └── task-template.md
-│   ├── test-plans/
-└── tests/                  # reservado; sem código nesta fase
+│   ├── ai/                  # catálogo e preservação do pacote de IA
+│   ├── architecture/        # diagramas e decisões documentais
+│   ├── leia.txt
+│   └── pacote-desenvolvimento-com-ia-v1.0-agents.zip
+├── kits/                    # 6 kits documentais
+└── reports/                 # auditoria e homologação
 ```
 
 Consulte os índices de cada pasta para os arquivos e modelos disponíveis. A árvore não pretende enumerar cada documento.
 
 ## 16. Como utilizar o template
 
-1. Leia `AGENTS.md`, a governança pertinente e [`docs/tasks/agent-workflow.md`](docs/tasks/agent-workflow.md).
+1. Leia `AGENTS.md`, `docs/ai/CATALOGO.md` e a documentação canônica em `docs/ai/reference/`.
 2. Registre objetivo, restrições e requisitos em modelos de `templates/`.
 3. Selecione somente stack, blueprint e módulos adequados.
 4. Obtenha aprovação da SPEC, da arquitetura/PLAN e do escopo de execução.

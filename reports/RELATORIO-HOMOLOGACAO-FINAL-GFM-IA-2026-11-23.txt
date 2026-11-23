@@ -1,0 +1,158 @@
+RELATORIO DE HOMOLOGACAO FINAL - GFM.Template - 23/11/2026
+================================================================
+
+1. IDENTIFICACAO E ESCOPO
+Repositorio: C:\Work\dev\veyloq\gfm-template-ia-netcore-2026
+Branch: main
+Remote origin: https://github.com/gfmaurilajob/gfm-template-ia-netcore-2026.git
+Objetivo: ajustes finais e homologacao funcional do uso independente/combinado de OpenAI Codex CLI, OpenCode e Claude Code sobre um repositorio documental, preservando os 99 arquivos originais do pacote de IA.
+Nao foram criados aplicativos de exemplo, servicos, containers, hooks, migracoes nem artefatos de publicacao.
+
+2. COMANDOS E EVIDENCIAS PRINCIPAIS
+- codex --strict-config --version => codex-cli 0.171.0
+- codex doctor --summary --no-color --ascii => 19 ok | 3 notes | 3 warn | 0 fail degraded
+- codex debug prompt-input => exit 0; AGENTS.md carregado; 8 skills em .codex/skills/, 14 em .agents/skills/ e 4 bundled.
+- opencode --version => 1.19.0
+- opencode debug config => exit 0; configuracao V1 valida.
+- opencode.debug skill com OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1 => 14 skills canonicas, 0 adaptadores Claude, 0 duplicatas.
+- opencode agent list => exit 0; context-manager visivel.
+- Get-Command claude => nao encontrado.
+- git diff --check => exit 0.
+- git status --short --branch => branch main, sem alteracoes de remote.
+
+3. INVENTARIO, BACKUP E PRESERVACAO
+Backup/inventario pre-ajuste:
+C:\Users\gfmau\AppData\Local\Temp\opencode\homologacao-final-2026-11-23\backup\
+C:\Users\gfmau\AppData\Local\Temp\opencode\homologacao-final-2026-11-23\inventario-pre-ajuste.txt
+Validacao final:
+C:\Users\gfmau\AppData\Local\Temp\opencode\homologacao-final-2026-11-23\validacao-final.txt
+Resultado: 99/99 arquivos do pacote preservados; MISSING=0, EXTRA=0 no conjunto verificado; hash integral.
+AGENTS.md original:
+C:\Work\dev\veyloq\gfm-template-ia-netcore-2026\docs\ai\reference\AGENTS-original.md
+Linhas: 8621. SHA-256: f2d1a15cb5c0d44facd967f50d01d1d76b15bf86bc236b6b94dfeee9edc0f741.
+Hash registrado em docs/ai/reference/AGENTS-original.sha256.txt confere.
+
+4. ENTRYPOINT E LIMITE DE CONTEXTO
+AGENTS.md ativo: 5161 bytes, abaixo de project_doc_max_bytes=65536.
+O arquivo possui entrypoint objetivo, regras nao negociaveis, classificacao de homologacao, uso combinado, pontos de entrada por ferramenta e seguranca.
+Definicoes longas permanecem em docs/ai/reference/agents/ e docs/ai/reference/commands/.
+Nao houve modificacao em docs/ai/reference/, no backup de 23/11/2026 nem nos 99 arquivos originais.
+
+5. CONFIGURACAO CODEX CLI
+Arquivo: .codex/config.toml
+Conteudo validado: project_doc_max_bytes = 65536.
+codex --strict-config nao acusou campos desconhecidos.
+codex doctor indicou sandbox restricted fs + restricted network e approval OnRequest.
+Agentes: 19 arquivos TOML em .codex/agents/, todos com name, description e developer_instructions.
+Skills de comando: 8 arquivos .codex/skills/*/SKILL.md, todos com name/description validos.
+Invocacao documentada: /skills para inspecionar, $<skill> para skills de comando (exemplo $typescript-scaffold) e /agents ou linguagem natural para agentes.
+Ressalva: nao foi executada sessao com modelo, portanto a descoberta de agentes nao foi provada por alocacao real de subagente; a evidencia e estatica e de prompt-input.
+
+6. DESCOBERTA CODEX
+codex debug prompt-input carregou o entrypoint e a lista de skills.
+Contagens observadas: r0=8 (skills de comando em .codex/skills/), r3=14 (skills canonicas em .agents/skills/), r1=4 (bundled).
+O comando --strict-config nao e aceito dentro de `codex debug`; a validacao strict foi executada separadamente com `codex --strict-config --version`.
+Classificacao Codex CLI: HOMOLOGADO COM RESSALVAS.
+
+7. CONFIGURACAO OPENCODE
+Arquivo: opencode.json.
+Formato mantido em V1: permission, bash, task; nao foram usadas chaves V2 (permissions, shell, subagent).
+Permissoes: leitura/glob/grep permitidas; edit, external_directory e task sob aprovacao; skill permitida; bash sob aprovacao com excecoes de consulta git e negativas explicitas para git push, git reset --hard e rm -rf.
+Agentes: 19 arquivos em .opencode/agents/, incluindo context-manager.
+Comandos: 8 arquivos em .opencode/commands/.
+Skills canonicas: 14 em .agents/skills/.
+opencode debug config confirmou a configuracao efetiva sem erro.
+
+8. CORRECAO DA DUPLICIDADE DE SKILLS NO OPENCODE
+Problema confirmado: OpenCode 1.19.0 descobre automaticamente .agents/skills/ e .claude/skills/. Em 12 execucoes com workspaces isolados e copias frescas, sem variavel de ambiente, 6 execucoes apresentaram adaptadores Claude substituindo skills canonicas por nome.
+Teste controlado sem variavel: {(11,3):1, (14,0):6, (12,2):1, (13,1):4}.
+Mecanismo nativo adotado: OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1 na inicializacao do OpenCode.
+Teste controlado com variavel: 12/12 execucoes com 14 skills canonicas e 0 adaptadores Claude.
+Comando no PowerShell: $env:OPENCODE_DISABLE_CLAUDE_CODE_SKILLS='1'; opencode
+Nao foi possivel excluir apenas .claude/skills/ pelo opencode.json V1; a chave skills apenas adiciona caminhos e nao substitui a descoberta padrao.
+Nao houve exclusao, renomeacao ou copia das 14 skills em .claude/skills/, preservando o adaptador necessario ao Claude Code.
+A variavel e por processo de inicializacao; ela nao fica persistida no arquivo de configuracao e deve ser documentada para o usuario.
+Classificacao OpenCode: HOMOLOGADO COM RESSALVAS.
+
+9. CLAUDE CODE
+CLI nao encontrada no ambiente; nao houve instalacao, Login, credencial ou chamada de modelo.
+CLAUDE.md contem @AGENTS.md e delega definicoes longas para docs/ai/reference/.
+.claude/settings.json possui permissoes minimas e nenhum hook.
+Adaptadores preparados: 19 agentes, 8 comandos e 14 skills.
+Classificacao Claude Code: PENDENTE.
+
+10. USO COMBINADO
+A governanca e unica, com adaptadores por ferramenta; nenhum adaptador substitui AGENTS.md.
+Codex e OpenCode possuem evidencia de descoberta e validacao de configuracao.
+Claude Code depende de CLI disponivel e teste operacional.
+Classificacao do uso combinado: PENDENTE.
+
+11. FORMAS DE INVOCACAO
+- Codex CLI: /skills, $<skill>, /agents ou linguagem natural. Exemplo: $typescript-scaffold.
+- OpenCode: modo subagente, comandos por /<comando>, skills por nome; iniciar com OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1.
+- Claude Code: ferramenta Task para agentes, /<comando> para comandos e skills em .claude/skills/; homologacao ainda pendente.
+- Em caso de duvida, consultar context-manager.
+
+12. TESTES ESTATICOS
+JSON valido: opencode.json e .claude/settings.json.
+TOML valido: .codex/config.toml e 19 agentes Codex.
+Frontmatter valido: 8 skills Codex, 14 skills canonicas, 14 adaptadores Claude skills, 19 agentes OpenCode, 8 comandos OpenCode, 19 agentes Claude e 8 comandos Claude.
+Referencias explicitas em AGENTS.md, README.md e docs/ai/CATALOGO.md resolvidas.
+Nenhum segredo, token, credencial ou chave privada detectado na varredura textual do repositorio.
+
+13. TESTES DE DESCOBERTA EM AMBIENTE ISOLADO
+Diretorio temporario: C:\Users\gfmau\AppData\Local\Temp\opencode\homologacao-final-2026-11-23\workspace
+Foram copiados apenas entrypoints, configuracoes e diretorios de governanca necessarios.
+Codex: prompt-input com AGENTS.md e skills descobertas.
+OpenCode: debug skill e agent list com a variavel nativa; 0 falhas.
+Nao houve escrita no repositorio durante os testes de descoberta.
+
+14. TESTES OPERACIONAIS COM MODELO
+Nao executados. Nao havia autorizacao explicita de custo para chamadas pagas de modelos.
+Nao houve execucao de scaffold, migracao, SAST, auditoria de dependencias nem revisao de PR.
+Este item permanece PENDENTE para todas as ferramentas.
+
+15. SEGURANCA E GIT
+Nenhum hook instalado.
+Nenhuma alteracao de remote, branch principal, historico, tags ou autenticacao.
+Nenhum git commit, push, pull, reset, rebase ou limpeza ampla.
+git diff --check sem erros.
+Estado Git final observado:
+ M AGENTS.md
+ M README.md
+ D leia.txt
+ D pacote-desenvolvimento-com-ia-v1.0-agents.zip
+?? .claude/
+?? .codex/
+?? .opencode/
+?? CLAUDE.md
+?? docs/ai/
+?? docs/leia.txt
+?? docs/pacote-desenvolvimento-com-ia-v1.0-agents.zip
+?? opencode.json
+?? reports/RELATORIO-HOMOLOGACAO-3-IAS-2026-11-23.txt
+?? reports/RELATORIO-HOMOLOGACAO-FINAL-GFM-IA-2026-11-23.txt
+A movimentacao preexistente de leia.txt e do ZIP para docs/ nao foi realizada nesta tarefa.
+
+16. LIMITACOES E RESSALVAS
+- Claude Code indisponivel no ambiente.
+- Testes operacionais com modelo nao autorizados.
+- Configuracao OpenCode instalada e V1; documentacao publica atual descreve V2. Nao houve migracao sem aprovacao.
+- A exclusao de .claude/skills depende de variavel de ambiente nativa por inicializacao; opencode.json nao oferece exclusao equivalente na versao instalada.
+- codex doctor apresentou 3 notes/3 warn: Microsoft Defender, worktree fora de Dev Drive, app-server stale e avisos de ambiente; nenhum fail.
+- Descoberta de agentes Codex nao foi comprovada por execucao de subagente com modelo.
+- O README original continha referencias a diretorios ausentes neste repositorio; foram corrigidas para descrever o conteudo real sem criar pastas.
+
+17. PENDENCIAS REAIS E PROCEDIMENTO FUTURO
+- Disponibilizar Claude Code CLI e executar validacao controlada: claude --version, conferencia de CLAUDE.md, permissoes, Task, comandos e skills.
+- Se houver autorizacao explicita de custo, executar um prompt operacional minimo por ferramenta em projeto descartavel e registrar evidencias.
+- Confirmar em sessao real a alocacao de agentes Codex e OpenCode.
+- Se OpenCode for atualizado para V2, revisar opencode.json e substituir a variavel por mecanismo persistente suportado, mediante aprovacao.
+- Nao implementar nada a partir deste repositorio sem SPEC, plano e autorizacao explicita.
+
+18. CONCLUSAO
+- OpenAI Codex CLI 0.171.0: HOMOLOGADO COM RESSALVAS.
+- OpenCode 1.19.0: HOMOLOGADO COM RESSALVAS, com inicializacao recomendada via OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1.
+- Claude Code: PENDENTE.
+- Uso combinado das tres IAs: PENDENTE.
+- Repositorio preservado, documentacao ajustada e duplicidade de skills tratada com mecanismo nativo, sem remover adaptadores Claude.
