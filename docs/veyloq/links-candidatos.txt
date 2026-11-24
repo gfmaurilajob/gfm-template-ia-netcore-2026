@@ -1,0 +1,95 @@
+Links candidatos — VEYLOQ
+Gerado em 24/11/2026 a partir de https://app.veyloq.org
+Situacao neste repositorio: PENDENTE (nao baixado, nao homologado localmente)
+Atualizacao 24/11/2026: os itens 1 a 7 foram baixados e instalados; ZIPs em docs/veyloq/. Status operacional permanece PENDENTE (sem teste controlado). O item 7 ja estava instalado. Ver docs/veyloq/README.md e reports/RELATORIO-REORGANIZACAO-VEYLOQ-GFM-IA-2026-11-24.txt.
+
+Prioridade alta
+1. Blueprint: plano em passos para projeto de varias sessoes
+   https://app.veyloq.org/skills/blueprint-plano-de-obra-em-varias-sessoes
+   Motivo: fecha o fluxo SPEC -> ARQUITETURA -> PLAN -> TASKS sem exigir instalacao de CLI.
+
+   veyloq blueprint-plano
+
+   Instale o item "Blueprint: plano em passos para projeto de várias sessões" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+2. Revisor de C#: .NET, async, nullable e seguranca
+   https://app.veyloq.org/agents/agente-revisor-de-csharp-e-dotnet
+   Motivo: unica lacuna de linguagem relevante para o nome netcore-2026; nao ha agente C# no catalogo atual.
+
+   veyloq agente-revisor
+
+   Instale o item "Revisor de C#: .NET, async, nullable e segurança" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+3. Spec Kit: do requisito ao codigo com especificacao
+   https://app.veyloq.org/skills/spec-kit-desenvolvimento-guiado-por-especificacao
+   Motivo: modelos de especificacao, plano e tarefas; exige CLI Python/uv, o que depende de autorizacao.
+
+   veyloq spec-kit
+
+   Instale o item "Spec Kit: do requisito ao código com especificação" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+Complementares
+4. MarkItDown: PDF, Word e planilha viram texto para a IA
+   https://app.veyloq.org/skills/markitdown-documentos-para-a-ia
+   Motivo: converter docs/o-guia-da-ia-para-devs.pdf em Markdown para consulta.
+
+   veyloq markitdown-documentos
+
+   Instale o item "MarkItDown: PDF, Word e planilha viram texto para a IA" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+5. Microsoft Docs: a IA consulta a documentacao oficial
+   https://app.veyloq.org/skills/microsoft-docs-a-ia-consulta-a-documentacao-oficial
+   Motivo: fonte oficial para .NET quando houver codigo no projeto.
+
+   veyloq microsoft-docs
+
+   Instale o item "Microsoft Docs: a IA consulta a documentação oficial" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+6. SQL Code Review: seguranca e boas praticas em cada consulta
+   https://app.veyloq.org/skills/sql-code-review-revisao-de-sql-e-seguranca
+   Motivo: complementa sql-pro/postgres-pro; prioridade menor porque ja ha agentes de SQL.
+
+   veyloq sql-code
+
+   Instale o item "SQL Code Review: segurança e boas práticas em cada consulta" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+Referencia (ja instalado, nao baixar novamente)
+7. Pacote desenvolvimento com IA: metodo, times e qualidade
+   https://app.veyloq.org/bundles/pacote-desenvolvimento-com-ia
+   Contem os 6 kits ja presentes em kits/ (ver docs/ai/CATALOGO.md).
+
+
+   veyloq pacote-desenvolvimento
+
+
+   Instale o item "Pacote desenvolvimento com IA: método, times e qualidade" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+   
+
+
+
+
+
+
+
+Catalogo geral
+8. Desenvolvimento: https://app.veyloq.org/catalog/dev
+9. Kits: https://app.veyloq.org/kits

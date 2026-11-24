@@ -1,0 +1,143 @@
+# Relatório de reorganização VEYLOQ no GFM.Template
+
+Data: 24/11/2026  
+Repositório: `C:\Work\dev\veyloq\gfm-template-ia-netcore-2026`  
+Branch: `main`  
+HEAD antes deste trabalho: `246627f inicio - 2`  
+Remote: `https://github.com/gfmaurilajob/gfm-template-ia-netcore-2026.git`
+
+## 1. Objetivo
+
+Reorganizar os pacotes originais VEYLOQ em `docs/veyloq/`, atualizar referências e inventários, validar a instalação das skills e dos adaptadores, gerar evidência operacional e preparar commit local sem publicar conteúdo de terceiros sem autorização comprovada.
+
+## 2. Diagnóstico inicial
+
+- `context-manager` foi consultado antes do trabalho especializado.
+- O repositório é documental; não há aplicação executável, suíte de testes, `.github/workflows` nem validadores dedicados.
+- `.gitattributes` não existe.
+- Claude Code não estava disponível no PATH.
+- Não havia hook instalado.
+- Foram encontrados 18 ZIPs VEYLOQ, todos em `docs/veyloq/`; nenhum ZIP permaneceu na raiz.
+- O Git registrou movimentações prévias:
+  - `pacote-desenvolvimento-com-ia-v1.0-agents.zip`: raiz no commit `1c09ead`, `docs/` no commit `7f30460`, atual `docs/veyloq/`.
+  - `agente-revisor-de-csharp-e-dotnet-v1.0-agents.zip`: `docs/` no commit `7f30460`, atual `docs/veyloq/`.
+  - 12 ZIPs foram adicionados diretamente em `docs/veyloq/` no commit `246627f`.
+  - 4 ZIPs instalados nesta rodada foram movidos manualmente para `docs/veyloq/`; não possuem histórico de commit próprio até esta reorganização.
+- Evidências históricas que citam caminhos antigos foram preservadas:
+  - `reports/RELATORIO-AUDITORIA-PACOTE-IA-2026-11-23.txt`
+  - `reports/RELATORIO-HOMOLOGACAO-3-IAS-2026-11-23.txt`
+  - `reports/RELATORIO-HOMOLOGACAO-FINAL-GFM-IA-2026-11-23.txt`
+
+## 3. Backups e preservação
+
+Cópias de segurança fora do Git foram criadas antes das alterações:
+
+- `C:\Users\gfmau\AppData\Local\Temp\opencode\reorg-gfm-20261124\backup\`
+- `C:\Users\gfmau\AppData\Local\Temp\opencode\backup-veyloq-lote-20261124\`
+- `C:\Users\gfmau\AppData\Local\Temp\opencode\backup-blueprint-20261124\`
+- `C:\Users\gfmau\AppData\Local\Temp\opencode\backup-csharp-20261124\`
+
+Arquivos de preservação não foram apagados, resumidos, reescritos ou movidos. `docs/ai/reference/AGENTS-index.md` foi alterado apenas por acréscimo, mediante solicitação explícita. `docs/ai/reference/AGENTS-original.md` permanece com SHA-256 `f2d1a15cb5c0d44facd967f50d01d1d76b15bf86bc236b6b94dfeee9edc0f741`.
+
+## 4. Inventário dos ZIPs
+
+`docs/veyloq/README.md` passou a conter a lista oficial com nome, tipo/slug, entradas, bytes, SHA-256 e origem registrada dos 18 pacotes.
+
+Resultado da validação:
+
+- `root_zips=0`
+- `docs_veyloq_zips=18`
+- `integrity_bad=0`
+- `unique_ids=18`
+- Todos os pacotes declaram `format: 1`, `version: 1.0` e publicação em 05/11/2026 nos respectivos `manifest.json`.
+- Não há duplicidade por SHA-256 nem por `manifest.id`.
+- Há sobreposição esperada entre o bundle `pacote-desenvolvimento-com-ia` e os pacotes avulsos `superpowers-metodo-completo` (22 entradas idênticas) e `superpowers-fluxo-de-entrega` (32 entradas idênticas), além do `LICENSE.txt` comum.
+- Inventário detalhado também foi salvo em `C:\Users\gfmau\AppData\Local\Temp\opencode\gfm-reorg-20261124\inventario-zip.json`.
+
+## 5. Componentes instalados
+
+Foram instalados e/ou atualizados:
+
+- `.agents/skills/blueprint/SKILL.md` e `LICENSE.txt` — ID `ddf49518-56d9-4a07-8d10-79f901408eab`.
+- `docs/ai/reference/agents/csharp-reviewer.md`, `.opencode/agents/csharp-reviewer.md` e `agents/csharp-reviewer/LICENSE.txt` — ID `f15a4057-cbb8-466a-b228-44c1ebc21744`.
+- `.agents/skills/spec-kit-sdd/SKILL.md` — ID `4fb0defb-8194-4f3a-856c-61c76b0655af`.
+- `.agents/skills/markitdown-convert/SKILL.md` — ID `6dde8afd-ba5a-45ac-b6c5-46ff9e98e828`.
+- `.agents/skills/microsoft-docs/SKILL.md` e `LICENSE.txt` — ID `bc82f24d-a16f-4454-ab70-f2f458ad95d3`.
+- `.agents/skills/sql-code-review/SKILL.md` e `LICENSE.txt` — ID `21bc67b3-1bd4-428b-85f3-9aabb694de47`.
+- Pacote `2c0a8f1c-71e6-4e22-8ee6-c4f271e44a23`: 97 arquivos conferidos, 0 novos; `AGENTS.md` idêntico ao original preservado; créditos já eram prefixo de `ATTRIBUTION.md`.
+
+`ATTRIBUTION.md` terminou com 1511 linhas e um bloco por componente instalado, incluindo Blueprint (linha 1365), C# (linha 1399), Spec Kit (linha 1433), MarkItDown (linha 1439), Microsoft Docs (linha 1445) e SQL Code Review (linha 1479).
+
+Nenhum hook foi instalado. Comandos de setup ficaram apenas documentados e não foram executados:
+
+- `uv tool install specify-cli`
+- `pip install "markitdown[all]"`
+- `npm install -g @microsoft/learn-cli`
+
+Aliases MCP VEYLOQ não foram conectados.
+
+## 6. Documentação e referências atualizadas
+
+- `AGENTS.md`: ponteiro para `docs/veyloq/README.md` e contagem de 19 skills canônicas.
+- `README.md`: árvore com `docs/veyloq/`, 19 skills, adaptadores e licenças.
+- `docs/veyloq/README.md`: criado com inventário, hashes, origens, licenças, restrições e procedimento de atualização.
+- `docs/ai/CATALOGO.md`: `csharp-reviewer`, 19 skills, 5 skills VEYLOQ e seção de pacotes originais.
+- `docs/ai/reference/AGENTS-index.md`: seção acréscimo de 24/11/2026; índice histórico mantido.
+- `docs/architecture/README.md`: links quebrados para `../../src/front-end/README.md` e `../../blueprints/README.md` substituídos por texto de diretórios reservados.
+- `docs/veyloq/links-candidatos.txt`: linha de atualização acrescentada sem apagar o status histórico.
+
+## 7. Validação final
+
+Executada em 24/11/2026 com o script temporário `C:\Users\gfmau\AppData\Local\Temp\opencode\gfm-reorg-20261124\final_validate.ps1`.
+
+Resultados:
+
+- `compared=10 byte_diffs=0` — comparação byte a byte entre entradas dos ZIPs e arquivos instalados.
+- `canonical_skills=19`
+- `claude_skill_adapters=14`
+- `opencode_agents=20`
+- `codex_agents=19`
+- `claude_agents=19`
+- `codex_skills=8`
+- `opencode_commands=8`
+- `claude_commands=8`
+- `broken_relative_links=0`
+- `secret_suspects=0`
+- `AGENTS-original_hash_ok=True`
+- `json_ok=true` para `opencode.json` e `.claude/settings.json`
+- `TOML OK` para `.codex/config.toml`
+- `git diff --check`: avisos de normalização LF→CRLF e trailing whitespace oriundos de conteúdo byte-idêntico dos ZIPs, de linha preservada em `links-candidatos.txt` e de quebras Markdown intencionais neste relatório; nenhum conflito, marcador ou erro de sintaxe.
+
+Evidências de ferramentas:
+
+- OpenAI Codex CLI `0.171.0`: `codex doctor --summary` resultou em `19 ok | 4 notes | 3 warn | 0 fail degraded`. Config carregada, auth configurada, sandbox `restricted fs + restricted network`, aprovação `OnRequest`, nenhum MCP configurado. Avisos: Microsoft Defender, worktree fora de Windows Dev Drive e socket do app-server obsoleto.
+- `codex debug prompt-input`: confirmou os roots `r0 = .codex/skills`, `r1 = ~/.codex/skills/.system`, `r2 = plugin cache postman`, `r3 = .agents/skills`; contagem observada: `r0=8`, `r1=4`, `r2=20`, `r3=19`. Todas as 19 skills canônicas VEYLOQ apareceram, incluindo as 5 instaladas nesta rodada.
+- Codex CLI não expõe um subcomando não interativo `codex skills`; a descoberta foi verificada por `codex debug prompt-input`. Agentes `.codex/agents/*.toml` existem, mas não foram listados no prompt-input; reconhecimento operacional permanece `PENDENTE`.
+- OpenCode `1.19.0`: configuração carregada; `opencode debug skill` listou 20 skills (19 canônicas + a skill embutida `customize-opencode`); `opencode agent list` listou 27 agentes (7 embutidos e 20 subagentes, incluindo `csharp-reviewer`).
+- Claude Code: `claude indisponivel no PATH`; configuração permanece `PENDENTE`.
+
+Saídas completas:
+
+- `C:\Users\gfmau\.local\share\opencode\tool-output\tool_20f01509d0013JuGGELHHO951p`
+- `C:\Users\gfmau\.local\share\opencode\tool-output\tool_20f048734001tfX2E3dpCgbDjB`
+
+## 8. Classificação
+
+- Skills canônicas e adaptadores: descoberta e integridade verificadas; execução controlada de cada skill ainda não realizada — `PENDENTE`.
+- OpenAI Codex CLI: configuração e descoberta verificadas com avisos operacionais — `HOMOLOGADO COM RESSALVAS` para configuração/descoberta; skills/agentes específicos permanecem `PENDENTE`.
+- OpenCode: configuração, skills e agentes descobertos — `HOMOLOGADO COM RESSALVAS` para configuração/descoberta; execução de skills/agentes específicos permanece `PENDENTE`.
+- Claude Code: indisponível — `PENDENTE`.
+- Nenhum componente foi declarado `HOMOLOGADO` sem teste operacional controlado.
+
+## 9. Bloqueios e decisões
+
+- Cada ZIP contém `LICENSE.txt` com a regra: itens de terceiros seguem a licença original; textos escritos pela VEYLOQ são para uso pessoal e profissional, “sem redistribuir nem revender como se fossem seus”.
+- O usuário determinou não publicar ZIPs ou conteúdo de terceiros sem autorização comprovada de redistribuição.
+- Decisão aplicada: manter os ZIPs como referência local; não incluir ZIPs não rastreados no stage; registrar o bloqueio neste relatório; não executar push.
+- Os 14 ZIPs já presentes no commit `246627f` não foram removidos nem reescritos; o histórico foi preservado.
+- Commit local foi preparado somente para documentação, configuração, skills, adaptadores e este relatório.
+- Push não foi executado e depende de autorização explícita de publicação.
+
+## 10. Resultado
+
+Reorganização documental concluída, inventário publicado em `docs/veyloq/README.md`, referências atualizadas, skills e adaptadores íntegros, validações locais sem erros bloqueantes para o commit documental. A publicação permanece bloqueada por licenciamento.

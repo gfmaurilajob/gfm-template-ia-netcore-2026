@@ -9,7 +9,7 @@ Documentação da arquitetura-alvo, regras de dependência, decisões e diagrama
 - [Diagramas](diagrams/README.md): inventário de PNGs e fontes Draw.io editáveis; Mermaid complementar.
 - [Draw.io editáveis](diagrams/drawio/README.md): fontes dos oito diagramas de arquitetura do template.
 - `standards/`: padrões arquiteturais reutilizáveis.
-- [Seleção de módulos Front-end](../../src/front-end/README.md): responsabilidades de Admin, Site, Landing Page, Mobile e shared.
-- [Blueprints](../../blueprints/README.md): cenários independentes de back-end, Front-end e Full Stack.
+- `src/front-end/`: reservado para a seleção de módulos Front-end em projeto autorizado (Admin, Site, Landing Page, Mobile e shared); diretório ausente neste template documental.
+- `blueprints/`: reservado para cenários independentes de back-end, Front-end e Full Stack; diretório ausente neste template documental.
 
 Toda decisão deve registrar contexto, alternativas, consequências e status. Nenhuma tecnologia opcional é obrigatória sem justificativa do cenário.

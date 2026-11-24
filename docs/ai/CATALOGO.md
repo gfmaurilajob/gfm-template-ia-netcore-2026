@@ -3,7 +3,7 @@
 Fonte canônica: `AGENTS.md` (entrypoint) e `docs/ai/reference/` (preservação verificável).
 Este catálogo não substitui as definições canônicas; apenas mapeia nomes e caminhos.
 
-## Agentes (18 originais + context-manager)
+## Agentes (18 originais + context-manager + csharp-reviewer)
 
 | Nome | Origem canônica | Codex | OpenCode | Claude Code |
 |---|---|---|---|---|
@@ -26,6 +26,9 @@ Este catálogo não substitui as definições canônicas; apenas mapeia nomes e 
 | security-auditor | `docs/ai/reference/agents/security-auditor.md` | `.codex/agents/security-auditor.toml` | `.opencode/agents/security-auditor.md` | `.claude/agents/security-auditor.md` |
 | performance-engineer | `docs/ai/reference/agents/performance-engineer.md` | `.codex/agents/performance-engineer.toml` | `.opencode/agents/performance-engineer.md` | `.claude/agents/performance-engineer.md` |
 | context-manager | `docs/ai/reference/agents/context-manager.md` | `.codex/agents/context-manager.toml` | `.opencode/agents/context-manager.md` | `.claude/agents/context-manager.md` |
+| csharp-reviewer | `docs/ai/reference/agents/csharp-reviewer.md` | — | `.opencode/agents/csharp-reviewer.md` | — |
+
+Adaptadores de Codex e Claude Code para `csharp-reviewer`: ausentes (`PENDENTE`). A definição canônica e o adaptador OpenCode estão registrados em `AGENTS.md`.
 
 ## Comandos (8)
 
@@ -40,7 +43,7 @@ Este catálogo não substitui as definições canônicas; apenas mapeia nomes e 
 | /deps-audit | `docs/ai/reference/commands/deps-audit.md` | `.codex/skills/deps-audit/SKILL.md` | `.opencode/commands/deps-audit.md` | `.claude/commands/deps-audit.md` |
 | /pr-enhance | `docs/ai/reference/commands/pr-enhance.md` | `.codex/skills/pr-enhance/SKILL.md` | `.opencode/commands/pr-enhance.md` | `.claude/commands/pr-enhance.md` |
 
-## Skills (14)
+## Skills (19)
 
 | Skill | Canônica | Adaptador Claude Code |
 |---|---|---|
@@ -58,8 +61,13 @@ Este catálogo não substitui as definições canônicas; apenas mapeia nomes e 
 | using-git-worktrees | `.agents/skills/using-git-worktrees/SKILL.md` | `.claude/skills/using-git-worktrees/SKILL.md` |
 | verification-before-completion | `.agents/skills/verification-before-completion/SKILL.md` | `.claude/skills/verification-before-completion/SKILL.md` |
 | writing-plans | `.agents/skills/writing-plans/SKILL.md` | `.claude/skills/writing-plans/SKILL.md` |
+| blueprint | `.agents/skills/blueprint/SKILL.md` | — |
+| markitdown-convert | `.agents/skills/markitdown-convert/SKILL.md` | — |
+| microsoft-docs | `.agents/skills/microsoft-docs/SKILL.md` | — |
+| spec-kit-sdd | `.agents/skills/spec-kit-sdd/SKILL.md` | — |
+| sql-code-review | `.agents/skills/sql-code-review/SKILL.md` | — |
 
-Codex CLI 0.171.0 descobre as 8 skills de comando em `.codex/skills/` e as 14 skills canônicas em `.agents/skills/`. OpenCode 1.19.0 combina `.agents/skills/` e `.claude/skills/`, com precedência instável por `name`; use `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1` para revelar somente as 14 skills canônicas. Não exclua `.claude/skills/`: ele é necessário ao Claude Code.
+Adaptadores Claude Code para as 5 skills VEYLOQ: ausentes (`PENDENTE`). Codex CLI 0.171.0 descobre as 8 skills de comando em `.codex/skills/` e as 19 skills canônicas em `.agents/skills/`. OpenCode 1.19.0 combina `.agents/skills/` e `.claude/skills/`, com precedência instável por `name`; use `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1` para revelar somente as 19 skills canônicas. Não exclua `.claude/skills/`: ele é necessário ao Claude Code.
 
 ## Kits (6)
 
@@ -71,6 +79,12 @@ Codex CLI 0.171.0 descobre as 8 skills de comando em `.codex/skills/` e as 14 sk
 | `kits/kit-time-de-front-end/` | Time de front-end |
 | `kits/superpowers-fluxo-de-entrega/` | Superpowers: o fluxo de entrega |
 | `kits/superpowers-metodo-completo/` | Superpowers: o método completo |
+
+## Pacotes VEYLOQ originais
+
+`docs/veyloq/` é o diretório oficial dos 18 ZIPs originais da VEYLOQ. Inventário, SHA-256, origens, licenças e procedimento de atualização: `docs/veyloq/README.md`.
+
+Relação resumida: o bundle `pacote-desenvolvimento-com-ia` produziu os 6 kits e as 14 skills originais; `blueprint`, `spec-kit`, `markitdown`, `microsoft-docs` e `sql-code-review` produziram as 5 skills VEYLOQ; o agente de C# produziu a definição canônica e o adaptador OpenCode. Os demais ZIPs ficam como referência local. Status operacional das instalações: `PENDENTE` até teste controlado. Publicação dos ZIPs depende de autorização de redistribuição, nos termos do `LICENSE.txt` de cada pacote.
 
 ## Pontos de entrada por ferramenta
 

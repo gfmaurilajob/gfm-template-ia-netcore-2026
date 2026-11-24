@@ -191,3 +191,12 @@
 | /security-sast | 6587 | `docs/ai/reference/commands/security-sast.md` |
 | /deps-audit | 7095 | `docs/ai/reference/commands/deps-audit.md` |
 | /pr-enhance | 7900 | `docs/ai/reference/commands/pr-enhance.md` |
+
+## Componentes adicionados após a preservação
+
+Acréscimo documental de 24/11/2026. As seções históricas acima não foram reescritas.
+
+- Agente `csharp-reviewer`: definição em `docs/ai/reference/agents/csharp-reviewer.md`; adaptador em `.opencode/agents/csharp-reviewer.md`; licença em `agents/csharp-reviewer/LICENSE.txt`; crédito em `ATTRIBUTION.md`. Adaptadores Codex e Claude Code: ausentes (`PENDENTE`).
+- Skills VEYLOQ instaladas: `blueprint`, `spec-kit-sdd`, `markitdown-convert`, `microsoft-docs` e `sql-code-review`, todas em `.agents/skills/`. Adaptadores Claude Code: ausentes (`PENDENTE`).
+- ZIPs originais: 18 arquivos em `docs/veyloq/`; inventário, hashes, origens e restrições em `docs/veyloq/README.md`. Caminhos anteriores preservados em `reports/RELATORIO-AUDITORIA-PACOTE-IA-2026-11-23.txt`, `reports/RELATORIO-HOMOLOGACAO-3-IAS-2026-11-23.txt` e `reports/RELATORIO-HOMOLOGACAO-FINAL-GFM-IA-2026-11-23.txt`.
+- Status operacional dos componentes novos: `PENDENTE` até teste operacional controlado. Nenhum está declarado como `HOMOLOGADO`.

@@ -1361,3 +1361,151 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Blueprint: plano em passos para projeto de várias sessões
+
+Everything Claude Code (ECC): blueprint, de affaan-m. Licença MIT. Original: https://github.com/affaan-m/ECC (commit b38be6a7f6350964d59328b52f0624e1d1d552d1).
+
+Caminho no original: `skills/blueprint/SKILL.md`
+
+O que a VEYLOQ mudou: Linha de crédito acrescentada no fim do arquivo.
+
+### Texto da licença original
+
+```text
+MIT License
+
+Copyright (c) 2026 Affaan Mustafa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Revisor de C#: .NET, async, nullable e segurança
+
+Everything Claude Code (ECC): csharp-reviewer, de affaan-m. Licença MIT. Original: https://github.com/affaan-m/ECC (commit b38be6a7f6350964d59328b52f0624e1d1d552d1).
+
+Caminho no original: `agents/csharp-reviewer.md`
+
+O que a VEYLOQ mudou: Linha de crédito acrescentada no fim do arquivo.
+
+### Texto da licença original
+
+```text
+MIT License
+
+Copyright (c) 2026 Affaan Mustafa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Spec Kit: do requisito ao código com especificação
+
+Spec Kit, de GitHub, Inc.. Licença MIT. Original: https://github.com/github/spec-kit (commit 38c40ae25a4f1c025e1a2dd6a450095d17acab47).
+
+Este item é um guia da VEYLOQ que ensina a usar o projeto original. O projeto fica no endereço acima, com a licença dele.
+
+## MarkItDown: PDF, Word e planilha viram texto para a IA
+
+MarkItDown, de Microsoft Corporation. Licença MIT. Original: https://github.com/microsoft/markitdown (commit 7482c092d9c0074a89803c9fdb63a969e7fe17fc).
+
+Este item é um guia da VEYLOQ que ensina a usar o projeto original. O projeto fica no endereço acima, com a licença dele.
+
+## Microsoft Docs: a IA consulta a documentação oficial
+
+Microsoft Skills: microsoft-docs, de Microsoft. Licença MIT. Original: https://github.com/microsoft/skills (commit ddb78d131836a93109beb91f1d65b5f0e5ec2763).
+
+Caminho no original: `.github/skills/microsoft-docs/SKILL.md`
+
+O que a VEYLOQ mudou: Linha de crédito acrescentada no fim do arquivo.
+
+### Texto da licença original
+
+```text
+MIT License
+
+    Copyright (c) Microsoft Corporation.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE
+```
+
+## SQL Code Review: segurança e boas práticas em cada consulta
+
+GitHub awesome-copilot: sql-code-review, de GitHub awesome-copilot contributors. Licença MIT. Original: https://github.com/github/awesome-copilot (commit 96543145e9cb97711020b57b9d88f968062c4fc7).
+
+Caminho no original: `skills/sql-code-review/SKILL.md`
+
+O que a VEYLOQ mudou: Linha de crédito acrescentada no fim do arquivo.
+
+### Texto da licença original
+
+```text
+MIT License
+
+Copyright GitHub, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

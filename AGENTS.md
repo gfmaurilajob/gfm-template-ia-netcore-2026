@@ -10,6 +10,7 @@ Este repositório é documental e não contém aplicação executável. Nenhuma 
 - O índice de seções e a origem de cada agente/comando estão em `docs/ai/reference/AGENTS-index.md`.
 - Definições longas de agentes e comandos ficam em `docs/ai/reference/agents/` e `docs/ai/reference/commands/`.
 - O inventário de componentes e o mapeamento por ferramenta estão em `docs/ai/CATALOGO.md`.
+- Os pacotes originais da VEYLOQ ficam em `docs/veyloq/`; inventário, hashes e restrições estão em `docs/veyloq/README.md`.
 - Não apague, resuma, reescreva ou mova os arquivos de preservação sem solicitação explícita.
 
 ## 2. Regras não negociáveis
@@ -40,8 +41,9 @@ Nunca declare `HOMOLOGADO` sem evidência de teste operacional controlado.
 - A governança é compartilhada; arquivos específicos de ferramenta são adaptadores, não fontes concorrentes.
 - `context-manager` deve ser consultado antes de trabalho especializado para levantar contexto, restrições, arquivos relevantes, decisões pendentes e riscos.
 - Agentes e comandos devem citar a seção canônica correspondente em `docs/ai/reference/` quando precisarem de detalhes.
+- O revisor de C# tem definição canônica em `docs/ai/reference/agents/csharp-reviewer.md` e adaptador em `.opencode/agents/csharp-reviewer.md`.
 - Skills canônicas permanecem em `.agents/skills/`. O adaptador em `.claude/skills/` apenas aponta para elas.
-- No OpenCode 1.19.0, a descoberta combina `.agents/skills/` e `.claude/skills/`; a precedência por `name` não é estável e pode expor adaptadores Claude como duplicados. Inicie o OpenCode com `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1` para usar somente as 14 skills canônicas. Não exclua `.claude/skills/`: ele é necessário ao Claude Code.
+- No OpenCode 1.19.0, a descoberta combina `.agents/skills/` e `.claude/skills/`; a precedência por `name` não é estável e pode expor adaptadores Claude como duplicados. Inicie o OpenCode com `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1` para usar somente as 19 skills canônicas (14 originais + 5 VEYLOQ). Não exclua `.claude/skills/`: ele é necessário ao Claude Code.
 - Kits permanecem em `kits/`; não duplique seu conteúdo.
 
 ## 5. Pontos de entrada por ferramenta

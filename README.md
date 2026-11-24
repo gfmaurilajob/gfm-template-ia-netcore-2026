@@ -130,23 +130,22 @@ GFM.Template/
 ├── README.md
 ├── opencode.json
 ├── ATTRIBUTION.md
-├── .agents/                 # 14 skills canônicas
-├── .claude/                 # adaptadores Claude Code
+├── .agents/                 # 19 skills canônicas (14 originais + 5 VEYLOQ)
+├── .claude/                 # adaptadores Claude Code (14 originais)
 ├── .codex/                  # adaptadores Codex CLI
-├── .opencode/               # adaptadores OpenCode
-├── agents/                  # licenças dos 18 agentes originais
+├── .opencode/               # adaptadores OpenCode (inclui csharp-reviewer)
+├── agents/                  # licenças dos agentes (18 originais + csharp-reviewer)
 ├── bundles/
 ├── commands/                # licenças dos 8 comandos originais
 ├── docs/
 │   ├── ai/                  # catálogo e preservação do pacote de IA
 │   ├── architecture/        # diagramas e decisões documentais
-│   ├── leia.txt
-│   └── pacote-desenvolvimento-com-ia-v1.0-agents.zip
+│   └── veyloq/              # 18 ZIPs originais, README.md, leia.txt e links-candidatos.txt
 ├── kits/                    # 6 kits documentais
 └── reports/                 # auditoria e homologação
 ```
 
-Consulte os índices de cada pasta para os arquivos e modelos disponíveis. A árvore não pretende enumerar cada documento.
+Consulte os índices de cada pasta para os arquivos e modelos disponíveis. A árvore não pretende enumerar cada documento. O diretório `docs/veyloq/` é a origem oficial dos 18 ZIPs VEYLOQ preservados; seu inventário, hashes e restrições estão em `docs/veyloq/README.md`.
 
 ## 16. Como utilizar o template
 
