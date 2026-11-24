@@ -1,0 +1,262 @@
+
+
+
+Pacote desenvolvimento com IA: método, times e qualidade
+
+https://app.veyloq.org/bundles/pacote-desenvolvimento-com-ia
+
+comando
+veyloq pacote-desenvolvimento
+
+ou 
+
+Instale o item "Pacote desenvolvimento com IA: método, times e qualidade" da VEYLOQ que está no zip anexado. 
+Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). 
+Se o zip tiver um AGENTS.md e o projeto também, junte os dois. 
+Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. 
+Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. 
+No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+-----------------
+
+
+Equipe de agentes de back-end: API, banco e deploy
+
+https://app.veyloq.org/agent-teams/equipe-de-agentes-back-end
+
+
+veyloq equipe-agentes
+
+ou 
+
+Instale o item "Equipe de agentes de back-end: API, banco e deploy" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+------------
+
+
+Equipe de agentes de dados: consulta, pipeline e modelo
+
+https://app.veyloq.org/agent-teams/equipe-de-agentes-dados
+
+
+veyloq equipe-agentes
+
+ou 
+
+Instale o item "Equipe de agentes de dados: consulta, pipeline e modelo" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+-----------------------------------------------------------------------
+
+Revisor de C#: .NET, async, nullable e segurança
+
+https://app.veyloq.org/agents/agente-revisor-de-csharp-e-dotnet
+
+
+comando
+veyloq agente-revisor
+
+ou 
+
+Instale o item "Revisor de C#: .NET, async, nullable e segurança" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+------
+
+
+SQL Code Review: segurança e boas práticas em cada consulta
+
+
+
+
+https://app.veyloq.org/skills/sql-code-review-revisao-de-sql-e-seguranca
+
+
+comando
+
+veyloq sql-code
+
+
+ou 
+
+Instale o item "SQL Code Review: segurança e boas práticas em cada consulta" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+------
+
+
+
+------
+
+
+Superpowers: o método completo de programar com IA
+
+
+
+
+https://app.veyloq.org/kits/superpowers-metodo-completo
+
+
+comando
+
+veyloq superpowers-metodo
+
+
+ou 
+
+Instale o item "Superpowers: o método completo de programar com IA" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+------
+
+
+
+Awesome LLM Apps: guia para rodar um app de IA pronto
+
+
+https://app.veyloq.org/guides/awesome-llm-apps-guia
+
+
+veyloq awesome-llm
+
+
+ou
+
+
+Instale o item "Awesome LLM Apps: guia para rodar um app de IA pronto" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+----
+
+UI UX Pro Max: design system pronto para o seu produto
+
+
+
+https://app.veyloq.org/skills/ui-ux-pro-max-design-system
+
+
+veyloq ui-ux
+
+ou 
+
+
+Instale o item "UI UX Pro Max: design system pronto para o seu produto" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+--------------------
+
+
+
+Equipe de agentes de front-end: da tela ao teste
+
+
+https://app.veyloq.org/agent-teams/equipe-de-agentes-front-end
+
+
+
+
+veyloq equipe-agentes
+
+ou
+
+
+Instale o item "Equipe de agentes de front-end: da tela ao teste" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+-----
+
+https://app.veyloq.org/agents/agente-revisor-de-typescript
+
+
+Revisor de TypeScript: tipos, async e segurança
+
+veyloq agente-revisor
+
+
+Instale o item "Revisor de TypeScript: tipos, async e segurança" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+----------------
+
+
+
+
+Revisor de React: hooks, acessibilidade e segurança
+
+
+https://app.veyloq.org/agents/agente-revisor-de-react
+
+
+veyloq agente-revisor
+
+Instale o item "Revisor de React: hooks, acessibilidade e segurança" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+-----
+
+https://app.veyloq.org/skills/superpowers-git-worktrees
+
+Git worktrees: trabalho isolado sem bagunçar o seu branch
+
+
+veyloq superpowers-git
+
+Instale o item "Git worktrees: trabalho isolado sem bagunçar o seu branch" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+----
+
+https://app.veyloq.org/kits/superpowers-fluxo-de-entrega
+
+Superpowers: o fluxo de entrega, do plano ao merge
+
+
+veyloq superpowers-fluxo
+
+
+Instale o item "Superpowers: o fluxo de entrega, do plano ao merge" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+--------------------
+
+
+https://app.veyloq.org/agents/agente-arquiteto-de-backend
+
+
+Arquiteto de back-end: serviço, API e eventos desenhados
+
+
+veyloq agente-arquiteto
+
+
+Instale o item "Arquiteto de back-end: serviço, API e eventos desenhados" da VEYLOQ que está no zip anexado. Leia o README.md do zip e copie a pasta da ferramenta que estou usando para a raiz deste projeto, sem apagar nem sobrescrever nada que já exista (se um arquivo já existir, me mostre a diferença e pergunte antes). Se o zip tiver um AGENTS.md e o projeto também, junte os dois. Se tiver hook, me mostre o comando e só coloque no .claude/settings.json com o meu ok. Se você não tiver acesso aos arquivos do projeto, use as instruções do zip nesta conversa. No fim, diga em português o que foi instalado e como eu chamo o item.
+
+
+
+
+
+----------------
+
+
+
+https://app.veyloq.org/catalog/dev
+
+
+
+
+
+
+
