@@ -55,3 +55,6 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Restricted VEYLOQ archives: already tracked files stay tracked; local copies stay ignored
+docs/veyloq/*.zip

@@ -2,6 +2,7 @@
 
 Fonte canônica: `AGENTS.md` (entrypoint) e `docs/ai/reference/` (preservação verificável).
 Este catálogo não substitui as definições canônicas; apenas mapeia nomes e caminhos.
+Estado operacional por item: `docs/ai/MATRIZ-HOMOLOGACAO.md`. Fluxo de uso: `docs/ai/FLUXO-OFICIAL-DESENVOLVIMENTO-IA.md`.
 
 ## Agentes (18 originais + context-manager + csharp-reviewer)
 

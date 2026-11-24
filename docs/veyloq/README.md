@@ -2,7 +2,7 @@
 
 ## Finalidade
 
-Este diretório é a localização oficial dos arquivos ZIP originais da VEYLOQ preservados neste repositório. Use caminhos relativos à raiz: `docs/veyloq/<arquivo>.zip`.
+Este diretório é a localização oficial dos arquivos ZIP originais da VEYLOQ preservados neste repositório. Use caminhos relativos à raiz: `docs/veyloq/<arquivo>.zip`. A avaliação por item está em `MATRIZ-LICENCIAMENTO.md`.
 
 Os ZIPs são referências originais e somente leitura. Não extraia, modifique, renomeie ou exclua estes arquivos. A instalação de componentes deve ser feita a partir do conteúdo da pasta `agents/` para a raiz do repositório, conforme o `README.md` de cada pacote, sem sobrescrever arquivos existentes sem autorização.
 

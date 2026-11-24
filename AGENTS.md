@@ -45,6 +45,8 @@ Nunca declare `HOMOLOGADO` sem evidência de teste operacional controlado.
 - Skills canônicas permanecem em `.agents/skills/`. O adaptador em `.claude/skills/` apenas aponta para elas.
 - No OpenCode 1.19.0, a descoberta combina `.agents/skills/` e `.claude/skills/`; a precedência por `name` não é estável e pode expor adaptadores Claude como duplicados. Inicie o OpenCode com `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1` para usar somente as 19 skills canônicas (14 originais + 5 VEYLOQ). Não exclua `.claude/skills/`: ele é necessário ao Claude Code.
 - Kits permanecem em `kits/`; não duplique seu conteúdo.
+- O fluxo único de trabalho está em `docs/ai/FLUXO-OFICIAL-DESENVOLVIMENTO-IA.md`; para reutilizar o template, comece por `docs/GUIA-INICIO-NOVO-PROJETO.md` e `docs/PROMPT-INICIAL-NOVO-PROJETO.md`.
+- Inventários de homologação e licenciamento: `docs/ai/MATRIZ-HOMOLOGACAO.md` e `docs/veyloq/MATRIZ-LICENCIAMENTO.md`.
 
 ## 5. Pontos de entrada por ferramenta
 
@@ -59,4 +61,6 @@ Para Codex CLI, use `/skills` para inspecionar skills, `$<skill>` para invocar s
 - `opencode.json` e `.claude/settings.json` aplicam permissões mínimas: leitura/consulta ampla, escrita e shell sob aprovação, operações destrutivas e de publicação negadas por padrão.
 - Nenhum hook foi instalado. Se um hook for necessário, mostre o comando exato e aguarde autorização antes de alterar `.claude/settings.json`.
 - Claude Code não estava disponível no ambiente de auditoria; sua configuração é considerada `PENDENTE` até teste operacional.
+- Padrões para projetos futuros: `docs/architecture/standards/dotnet-patterns.md`, `docs/architecture/testing.md`, `docs/architecture/security.md` e `docs/architecture/devops.md`.
+- O validador permanente é `scripts/validate-template.ps1`; seus testes ficam em `tests/template/` e o pipeline em `.github/workflows/validate-template.yml`.
 - Relatórios de auditoria e homologação ficam em `reports/`.

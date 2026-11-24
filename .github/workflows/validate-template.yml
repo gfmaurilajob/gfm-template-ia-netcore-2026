@@ -1,0 +1,31 @@
+name: validate-template
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verificar PowerShell
+        shell: bash
+        run: |
+          if ! command -v pwsh >/dev/null 2>&1; then
+            echo "pwsh indisponivel no runner"
+            exit 1
+          fi
+      - name: Validar template
+        shell: pwsh
+        run: pwsh -NoProfile -File scripts/validate-template.ps1 -Mode CI -Format Text
+      - name: Testar validador
+        shell: pwsh
+        run: pwsh -NoProfile -File tests/template/validate-template.Tests.ps1

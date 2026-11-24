@@ -1,0 +1,113 @@
+RELATORIO FINAL DE HOMOLOGACAO E FECHAMENTO — GFM.Template .NET + IA 2026
+Data: 24/11/2026
+Repositorio: gfm-template-ia-netcore-2026
+Branch: main
+Natureza: missao documental, estrutural e de governanca. Nao ha aplicacao executavel neste repositorio.
+
+1. Objetivo e limite
+- Consolidar o template documental para reutilizacao em futuros projetos .NET com IA.
+- Separar explicitamente prontidao estrutural, homologacao operacional de ferramentas, homologacao operacional de skills/agentes e autorizacao de publicacao.
+- Nao desenvolver aplicacao, codigo C#, exemplos executaveis, scaffolds, migracoes, containers, hooks, MCPs, servicos ou infraestrutura.
+- Nao instalar dependencias, nao executar modelos com custo, nao modificar ZIPs, nao reescrever historico, nao alterar remote e nao executar push.
+
+2. Base preservada
+- Governanca ativa: AGENTS.md.
+- Preservacao integral: docs/ai/reference/AGENTS-original.md, SHA-256 f2d1a15cb5c0d44facd967f50d01d1d76b15bf86bc236b6b94dfeee9edc0f741.
+- Indice e origens: docs/ai/reference/AGENTS-index.md.
+- Acervo VEYLOQ: 18 ZIPs em docs/veyloq/, inventario e hashes em docs/veyloq/README.md.
+- Commit-base anterior: 5e6cf4f chore(ai): reorganize Veyloq archives and update skill references.
+- Backup verificado antes desta missao: diretorio temporario externo ao Git, contendo HEAD-5e6cf4f.zip com 12669466 bytes e SHA-256 a8e25f965d064737555ca4774cf931baa4ae88bfd355a2f2fd8781aa0173b497, mais copias dos quatro ZIPs locais nao rastreados.
+- Nenhum arquivo de preservacao foi apagado, resumido, reescrito ou movido.
+
+3. Inventario de componentes
+- 19 skills canonicas em .agents/skills/ (14 originais + 5 VEYLOQ).
+- 14 adaptadores de skills em .claude/skills/.
+- 8 skills em .codex/skills/.
+- 19 agentes em .codex/agents/.
+- 20 agentes em .opencode/agents/, incluindo csharp-reviewer.
+- 19 agentes em .claude/agents/.
+- 8 comandos em .opencode/commands/ e 8 em .claude/commands/.
+- 20 definicoes longas em docs/ai/reference/agents/ e 8 em docs/ai/reference/commands/.
+- Catastrofe de duplicidade evitada com OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1; .claude/skills/ foi preservado para Claude Code.
+- MCPs nao configurados; nenhum hook instalado.
+
+4. Ferramentas verificadas
+- Git 2.55.0.windows.5; branch local main a frente de origin/main por 1 commit antes do fechamento; remote somente consultado.
+- PowerShell 5.1 e 7.7.0; .NET 10.0.402; Node 24.20.0; npm 11.19.0; Python 3.13.15.
+- Codex CLI 0.171.0: codex doctor --summary resultou em 19 ok, 4 notes, 3 warn e 0 fail degraded. Sandbox em modo restricted fs + restricted network, aprovacao OnRequest e nenhum MCP configurado.
+- Codex debug prompt-input: r0=8 skills de comando em .codex/skills, r1=4 bundled, r2=20 no cache de plugin Postman e r3=19 skills canonicas em .agents/skills.
+- OpenCode 1.19.0: opencode debug skill listou 19 skills canonicas mais customize-opencode, sem duplicatas com a variavel de ambiente; opencode agent list listou 27 agentes, sendo 7 embutidos e 20 subagentes.
+- Claude Code indisponivel no PATH; configuracao documental preservada, execucao operacional PENDENTE.
+- Docker CLI 29.8.2 e Docker Compose v5.6.0 disponiveis, mas Docker Engine indisponivel: falha de conexao com npipe:////./pipe/dockerDesktopLinuxEngine.
+- WSL 3.0.5.0 disponivel.
+- uv, Specify CLI, MarkItDown e Microsoft Learn CLI indisponiveis. Comandos de instalacao permanecem apenas documentados e nao executados.
+
+5. Evidencias de integridade
+- 18 ZIPs presentes em docs/veyloq/ e 0 na raiz.
+- integrity_bad=0; unique_ids=18.
+- 10 comparacoes byte a byte entre originais e copias instaladas: byte_diffs=0.
+- broken_relative_links=0 na documentacao corrente.
+- secret_suspects=0 na varredura documental.
+- JSON valido em opencode.json e .claude/settings.json.
+- Configuracao TOML basica valida em .codex/config.toml e nos 19 agentes Codex.
+- Hash de AGENTS-original.md integro.
+- Mensagens anteriores de git diff --check foram avaliadas como avisos de normalizacao LF/CRLF e trailing whitespace em conteudo byte-identico de ZIPs e quebras Markdown intencionais, sem conflito ou erro de sintaxe. O validador final registra o resultado consolidado na secao 12.
+
+6. Licenciamento
+- Matriz completa: docs/veyloq/MATRIZ-LICENCIAMENTO.md.
+- 18 ZIPs avaliados: 14 rastreados e 4 locais nao rastreados. Os quatro ZIPs locais ficam ignorados por .gitignore e nao entram no commit.
+- Categorias: AUTORIA PRÓPRIA 57; REDISTRIBUIÇÃO PERMITIDA 0; REDISTRIBUIÇÃO CONDICIONAL 155; USO LOCAL 25; LICENÇA INDETERMINADA 1; PUBLICAÇÃO BLOQUEADA 25.
+- Total de itens unicos: 238. Itens podem aparecer em duas categorias quando sao simultaneamente USO LOCAL e PUBLICAÇÃO BLOQUEADA.
+- Nenhum item possui autorizacao expressa e verificavel para redistribuicao irrestrita.
+- Textos escritos pela VEYLOQ exigem autorizacao por escrito para publicacao; repositorio privado e presenca no Git nao sao autorizacao.
+
+7. Homologacao
+- Matriz completa: docs/ai/MATRIZ-HOMOLOGACAO.md.
+- 186 itens individualizados.
+- Categorias solicitadas: HOMOLOGADO 1; HOMOLOGADO COM RESSALVAS 57; CONFIGURADO 9; DESCOBERTO 4; PENDENTE DE TESTE OPERACIONAL 47; PENDENTE DE DEPENDÊNCIA 48; BLOQUEADO 19; INCOMPATÍVEL 1.
+- Equivalencia canonica: sem teste operacional controlado, item e PENDENTE para fins de uso. CONFIGURADO e DESCOBERTO descrevem inventario/configuracao, nao aprovacao operacional.
+- HOMOLOGADO e HOMOLOGADO COM RESSALVAS foram usados apenas onde ha execucao de consulta/verificacao registrada ou configuracao valida com risco conhecido, nunca como atestado de modelo executado.
+- Nenhum agente ou skill foi executado com modelo nesta missao. Nao houve custo de API autorizado. Nenhuma evidencia foi inventada.
+
+8. Fluxo, guia e padroes documentais
+- Fluxo unico: docs/ai/FLUXO-OFICIAL-DESENVOLVIMENTO-IA.md.
+- Reutilizacao: docs/GUIA-INICIO-NOVO-PROJETO.md e docs/PROMPT-INICIAL-NOVO-PROJETO.md.
+- Padroes futuros: docs/architecture/standards/dotnet-patterns.md, docs/architecture/testing.md, docs/architecture/security.md e docs/architecture/devops.md.
+- Esses documentos descrevem requisitos e decisoes para projetos futuros; nao autorizam implementacao neste template.
+
+9. Validacao permanente
+- Validador: scripts/validate-template.ps1.
+- testes: tests/template/validate-template.Tests.ps1.
+- Pipeline: .github/workflows/validate-template.yml, com permissao somente de leitura de conteudo, execucao em push em main, pull_request e workflow_dispatch, sem credenciais de IA, chamadas pagas, deploy ou publicacao.
+- Modos: Local e CI; saida Text ou Json; verificacoes obrigatorias, opcionais e informativas; ausencia de componente opcional nao vira aprovacao.
+- Cobertura: arquivos e diretorios obrigatorios, hash protegido, contagens de inventario, duplicidade de nomes, JSON, TOML basico, restricoes de workflow, permissoes, ausencia de hooks/MCP, categorias canonicas, matrizes, declaracao final, ausencia de codigo de aplicacao, links relativos, caminhos absolutos, segredos, git diff --check, ausencia de ZIP no indice e hashes dos ZIPs locais quando presentes.
+- Testes do validador: cenario valido aprovado e cenario invalido reprovado por arquivo obrigatorio ausente.
+
+10. Seguranca e efeitos colaterais
+- Nenhum segredo, token, credencial ou dado sensivel registrado.
+- Nenhum remote, branch principal, historico, tag ou autenticacao alterado.
+- Nenhum push, force push, reset --hard, limpeza ampla ou exclusao recursiva autorizada/executada.
+- Nenhuma instalacao global ou local de ferramenta executada.
+- Nenhum hook, MCP, servico, container, migracao, scaffold ou publicacao executado.
+- Nenhum ZIP extraido, renomeado, modificado ou excluido; arquivos ignorados permanecem como copias locais.
+- Comandos externos com custo ou efeito colateral permanecem apenas documentados.
+
+11. Estado de publicacao
+- Publicacao bloqueada por licenciamento VEYLOQ.
+- Push nao autorizado; o encerramento e feito com commit local.
+- Antes de qualquer publicacao futura, e necessario obter autorizacao escrita da VEYLOQ/GAX TECH LTDA enumerando cada ZIP, texto e destino.
+
+12. Resultado consolidado da validacao final
+- Validador em modo Local: 108 verificacoes, 99 aprovadas, 0 falhas, 4 ignoradas, 0 avisos e 5 informativas.
+- Validador em modo CI: 108 verificacoes, 99 aprovadas, 0 falhas, 4 ignoradas, 0 avisos e 5 informativas.
+- Testes do validador: 2 de 2 cenarios aprovados.
+- git diff --check: verificado pelo validador final, sem falha.
+- ZIPs no indice: zero.
+- Status pos-commit: registrado no log do Git apos o commit de fechamento; nenhum push executado.
+
+13. Conclusao
+- O template esta estruturalmente completo e consistente para servir de base documental a novos projetos .NET com IA.
+- A homologacao operacional completa nao pode ser declarada: ferramentas ausentes, modelo nao executado e licenciamento de publicacao bloqueado permanecem como ressalvas explicitas.
+- Nao ha aplicacao, codigo C#, exemplo executavel ou produto final neste repositorio.
+
+Declaração final: B. TEMPLATE ESTRUTURALMENTE FINALIZADO E APTO PARA NOVOS PROJETOS, COM RESSALVAS OPERACIONAIS DOCUMENTADAS.

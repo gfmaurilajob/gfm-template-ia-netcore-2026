@@ -8,7 +8,10 @@ Documentação da arquitetura-alvo, regras de dependência, decisões e diagrama
 - `decisions/`: ADRs.
 - [Diagramas](diagrams/README.md): inventário de PNGs e fontes Draw.io editáveis; Mermaid complementar.
 - [Draw.io editáveis](diagrams/drawio/README.md): fontes dos oito diagramas de arquitetura do template.
-- `standards/`: padrões arquiteturais reutilizáveis.
+- `standards/`: padrões arquiteturais reutilizáveis, incluindo [padrões .NET](standards/dotnet-patterns.md).
+- [Política de testes](testing.md): regras obrigatórias para projetos futuros.
+- [Segurança](security.md): segredos, permissões, conteúdo de terceiros e execução automática.
+- [DevOps](devops.md): Docker, CI/CD artefatos e publicação autorizada.
 - `src/front-end/`: reservado para a seleção de módulos Front-end em projeto autorizado (Admin, Site, Landing Page, Mobile e shared); diretório ausente neste template documental.
 - `blueprints/`: reservado para cenários independentes de back-end, Front-end e Full Stack; diretório ausente neste template documental.
 

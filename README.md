@@ -138,28 +138,34 @@ GFM.Template/
 ├── bundles/
 ├── commands/                # licenças dos 8 comandos originais
 ├── docs/
-│   ├── ai/                  # catálogo e preservação do pacote de IA
-│   ├── architecture/        # diagramas e decisões documentais
-│   └── veyloq/              # 18 ZIPs originais, README.md, leia.txt e links-candidatos.txt
+│   ├── ai/                  # catálogo, matriz de homologação e fluxo oficial
+│   ├── architecture/        # padrões .NET, testes, segurança e DevOps
+│   ├── veyloq/              # 18 ZIPs originais, README.md, matriz de licenciamento e links
+│   ├── GUIA-INICIO-NOVO-PROJETO.md
+│   └── PROMPT-INICIAL-NOVO-PROJETO.md
 ├── kits/                    # 6 kits documentais
-└── reports/                 # auditoria e homologação
+├── reports/                 # auditoria e homologação
+├── scripts/                 # validador permanente do template
+├── tests/template/          # testes do validador
+└── .github/workflows/       # validação documental em CI
 ```
 
-Consulte os índices de cada pasta para os arquivos e modelos disponíveis. A árvore não pretende enumerar cada documento. O diretório `docs/veyloq/` é a origem oficial dos 18 ZIPs VEYLOQ preservados; seu inventário, hashes e restrições estão em `docs/veyloq/README.md`.
+Consulte os índices de cada pasta para os arquivos e modelos disponíveis. A árvore não pretende enumerar cada documento. O diretório `docs/veyloq/` é a origem oficial dos 18 ZIPs VEYLOQ preservados; seu inventário, hashes e restrições estão em `docs/veyloq/README.md`. O fluxo único está em `docs/ai/FLUXO-OFICIAL-DESENVOLVIMENTO-IA.md`.
 
 ## 16. Como utilizar o template
 
-1. Leia `AGENTS.md`, `docs/ai/CATALOGO.md` e a documentação canônica em `docs/ai/reference/`.
-2. Registre objetivo, restrições e requisitos em modelos de `templates/`.
+1. Leia `AGENTS.md`, `docs/ai/CATALOGO.md`, `docs/ai/FLUXO-OFICIAL-DESENVOLVIMENTO-IA.md` e `docs/GUIA-INICIO-NOVO-PROJETO.md`.
+2. Use `docs/PROMPT-INICIAL-NOVO-PROJETO.md` para abrir uma iniciativa futura sem presumir produto específico.
 3. Selecione somente stack, blueprint e módulos adequados.
-4. Obtenha aprovação da SPEC, da arquitetura/PLAN e do escopo de execução.
+4. Obtenha aprovação da SPEC, da arquitetura/ADRs, do plano e do escopo de execução.
 5. Em um projeto futuro autorizado, implemente tarefas, execute os Quality Gates aplicáveis e registre evidências.
+6. Valide o template com `powershell -File scripts/validate-template.ps1 -Mode CI` antes de entregar alterações documentais.
 
 Não execute os modelos diretamente nem trate nomes-base como projetos já gerados.
 
 ## 17. Limitações e próximos passos
 
-Este repositório é documental: não oferece aplicação, bibliotecas instaladas, testes executáveis, infraestrutura, automação CI/CD ou implantação. Modelos e diagramas precisam ser adaptados e validados para os requisitos, as ferramentas e as versões do projeto futuro. Os próximos passos dependem da seleção e aprovação de uma iniciativa concreta.
+Este repositório é documental: não oferece aplicação, bibliotecas instaladas, testes de aplicação, infraestrutura ou implantação. Inclui validação documental permanente e pipeline de validação, sem deploy ou publicação automática. Modelos e diagramas precisam ser adaptados e validados para os requisitos, as ferramentas e as versões do projeto futuro. Os próximos passos dependem da seleção e aprovação de uma iniciativa concreta.
 
 ## 18. Autoria
 
